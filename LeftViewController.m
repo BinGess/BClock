@@ -7,13 +7,14 @@
 //
 
 #import "LeftViewController.h"
+#import "LeftViewCellView.h"
 
 @interface LeftViewController ()
 
 @end
 
 @implementation LeftViewController
-@synthesize dataSourceArray = _dataSourceArray;
+@synthesize alarmDataController = _alarmDataController;
 
 
 
@@ -21,20 +22,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_dataSourceArray count];
+    return [_alarmDataController.alarmList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Alarm";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    LeftViewCellView *cell = (LeftViewCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if(cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
+        
+        NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"LeftViewCellView"
+                                                    owner:self
+                                                  options:nil];
+        cell = [_nib objectAtIndex:0];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
-    cell.textLabel.text = @"Alarm";
-    cell.detailTextLabel.text = @"John";
+    
+    Alarm * alarm = [_alarmDataController.alarmList objectAtIndex:indexPath.row];
+    cell.timeText.text = [_utility changeDateFormat:alarm.date];
+    cell.nameLabel.text = alarm.info;
+
     return cell;
 }
 
@@ -67,17 +76,10 @@
         tableViewRect.origin.x = 0;
         tableViewRect.origin.y = 50;
         tableViewRect.size.width = 320;
-        tableViewRect.size.height = 350;
+        tableViewRect.size.height = 356;
     }
     
-    CGRect footBarRect;
-    {
-        footBarRect.origin.x = 0;
-        footBarRect.origin.y = 400;
-        footBarRect.size.width = 320;
-        footBarRect.size.height = 70;
-    }
-    
+
     _titleBar = [[UIView alloc] initWithFrame:titleBarRect];
     [_titleBar setBackgroundColor:[UIColor colorWithRed:9.0 green:9.0 blue:9.0 alpha:0.5 ]];
     
@@ -85,8 +87,21 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     
-    _footBar = [[UIView alloc] initWithFrame:footBarRect];
-    [_footBar setBackgroundColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5 ]];
+    
+    NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"FootBarView" owner:self options:nil];
+    _footBar = [_nib objectAtIndex:0];
+    [_footBar setCenter:CGPointMake(160, 435)];;
+    
+    // 创建一个手势识别器
+    UITapGestureRecognizer *oneFingerOneTaps =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerTwoTaps)] ;
+    
+    // Set required taps and number of touches
+    [oneFingerOneTaps setNumberOfTapsRequired:1];
+    [oneFingerOneTaps setNumberOfTouchesRequired:1];
+    
+    // Add the gesture to the view
+    [_footBar addGestureRecognizer:oneFingerOneTaps];
     
     [self.view addSubview:_titleBar];
     [self.view addSubview:_tableView];
@@ -96,8 +111,8 @@
 
 - (void) initData
 {
-   _dataSourceArray = [[NSMutableArray alloc] initWithObjects:@"Alarm1",@"Alarm2",nil
-    ];
+   _alarmDataController = [AlarmDataController sharedInstanceMethod];
+    _utility = [[Utility alloc] init];
 }
 
 # pragma mark--
@@ -124,6 +139,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)oneFingerTwoTaps
+{
+    CreateAlarmViewController * createAlarm = [[CreateAlarmViewController alloc] initWithNibName:@"CreateAlarmViewController" bundle:nil];
+    [self presentViewController:createAlarm animated:YES completion:nil];
 }
 
 @end

@@ -15,6 +15,15 @@
 		D71819A617DB33C700DE3F1A /* minuteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D71819A017DB33C700DE3F1A /* minuteButton.png */; };
 		D71819A717DB33C700DE3F1A /* rightTitleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D71819A117DB33C700DE3F1A /* rightTitleButton.png */; };
 		D71819A817DB33C700DE3F1A /* secondButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D71819A217DB33C700DE3F1A /* secondButton.png */; };
+		D71819B317DC3D7F00DE3F1A /* LeftViewCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819B217DC3D7F00DE3F1A /* LeftViewCellView.m */; };
+		D71819B517DC3DA600DE3F1A /* LeftViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71819B417DC3DA500DE3F1A /* LeftViewCellView.xib */; };
+		D71819B617DC423B00DE3F1A /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819AF17DC348500DE3F1A /* Utility.m */; };
+		D71819B717DC426600DE3F1A /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819AB17DC306200DE3F1A /* Alarm.m */; };
+		D71819B817DC426600DE3F1A /* AlarmDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819AD17DC306200DE3F1A /* AlarmDataController.m */; };
+		D71819BD17DC51DC00DE3F1A /* CreateAlarmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71819BC17DC51DC00DE3F1A /* CreateAlarmViewController.xib */; };
+		D71819C117DC52E700DE3F1A /* FootBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819C017DC52E700DE3F1A /* FootBarView.m */; };
+		D71819C317DC52F900DE3F1A /* FootBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71819C217DC52F900DE3F1A /* FootBarView.xib */; };
+		D71819C417DC575700DE3F1A /* CreateAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819BB17DC51D200DE3F1A /* CreateAlarmViewController.m */; };
 		D730EBAF17D1B17D0022BBD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBAE17D1B17D0022BBD6 /* UIKit.framework */; };
 		D730EBB117D1B17D0022BBD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBB017D1B17D0022BBD6 /* Foundation.framework */; };
 		D730EBB317D1B17D0022BBD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBB217D1B17D0022BBD6 /* CoreGraphics.framework */; };
@@ -59,6 +68,15 @@
 		D71819AD17DC306200DE3F1A /* AlarmDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmDataController.m; sourceTree = "<group>"; };
 		D71819AE17DC348500DE3F1A /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		D71819AF17DC348500DE3F1A /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		D71819B117DC3D7F00DE3F1A /* LeftViewCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewCellView.h; sourceTree = "<group>"; };
+		D71819B217DC3D7F00DE3F1A /* LeftViewCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewCellView.m; sourceTree = "<group>"; };
+		D71819B417DC3DA500DE3F1A /* LeftViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewCellView.xib; sourceTree = "<group>"; };
+		D71819BA17DC51D200DE3F1A /* CreateAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateAlarmViewController.h; sourceTree = "<group>"; };
+		D71819BB17DC51D200DE3F1A /* CreateAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateAlarmViewController.m; sourceTree = "<group>"; };
+		D71819BC17DC51DC00DE3F1A /* CreateAlarmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAlarmViewController.xib; sourceTree = "<group>"; };
+		D71819BF17DC52E700DE3F1A /* FootBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootBarView.h; sourceTree = "<group>"; };
+		D71819C017DC52E700DE3F1A /* FootBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootBarView.m; sourceTree = "<group>"; };
+		D71819C217DC52F900DE3F1A /* FootBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootBarView.xib; sourceTree = "<group>"; };
 		D730EBAB17D1B17D0022BBD6 /* BClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D730EBAE17D1B17D0022BBD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D730EBB017D1B17D0022BBD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,12 +153,42 @@
 			name = DataController;
 			sourceTree = "<group>";
 		};
+		D71819B017DC3C5400DE3F1A /* LefeViewCellView */ = {
+			isa = PBXGroup;
+			children = (
+				D71819B117DC3D7F00DE3F1A /* LeftViewCellView.h */,
+				D71819B217DC3D7F00DE3F1A /* LeftViewCellView.m */,
+				D71819B417DC3DA500DE3F1A /* LeftViewCellView.xib */,
+			);
+			name = LefeViewCellView;
+			sourceTree = "<group>";
+		};
+		D71819B917DC51BB00DE3F1A /* CreateAlarmView */ = {
+			isa = PBXGroup;
+			children = (
+				D71819BA17DC51D200DE3F1A /* CreateAlarmViewController.h */,
+				D71819BB17DC51D200DE3F1A /* CreateAlarmViewController.m */,
+				D71819BC17DC51DC00DE3F1A /* CreateAlarmViewController.xib */,
+			);
+			name = CreateAlarmView;
+			sourceTree = "<group>";
+		};
+		D71819BE17DC52BE00DE3F1A /* FootBarView */ = {
+			isa = PBXGroup;
+			children = (
+				D71819BF17DC52E700DE3F1A /* FootBarView.h */,
+				D71819C017DC52E700DE3F1A /* FootBarView.m */,
+				D71819C217DC52F900DE3F1A /* FootBarView.xib */,
+			);
+			name = FootBarView;
+			sourceTree = "<group>";
+		};
 		D730EBA217D1B17D0022BBD6 = {
 			isa = PBXGroup;
 			children = (
 				D730EBD117D1B19C0022BBD6 /* MMDrawerController */,
 				D71819A917DC302100DE3F1A /* DataController */,
-				D730EBDA17D1B1C50022BBD6 /* CenterClockView */,
+				D730EBDA17D1B1C50022BBD6 /* CenterView */,
 				D730EBEF17D1BD290022BBD6 /* RightView */,
 				D730EBEE17D1B4DA0022BBD6 /* LeftView */,
 				D730EBE317D1B4A50022BBD6 /* Resource */,
@@ -210,7 +258,7 @@
 			name = MMDrawerController;
 			sourceTree = "<group>";
 		};
-		D730EBDA17D1B1C50022BBD6 /* CenterClockView */ = {
+		D730EBDA17D1B1C50022BBD6 /* CenterView */ = {
 			isa = PBXGroup;
 			children = (
 				D718199717DAE6B200DE3F1A /* TitleBarView */,
@@ -219,7 +267,7 @@
 				D730EBDF17D1B3A00022BBD6 /* CenterClockViewController.m */,
 				D730EBE017D1B3A00022BBD6 /* CenterClockViewController.xib */,
 			);
-			name = CenterClockView;
+			name = CenterView;
 			sourceTree = "<group>";
 		};
 		D730EBDB17D1B34B0022BBD6 /* ClockView */ = {
@@ -252,6 +300,9 @@
 		D730EBEE17D1B4DA0022BBD6 /* LeftView */ = {
 			isa = PBXGroup;
 			children = (
+				D71819BE17DC52BE00DE3F1A /* FootBarView */,
+				D71819B917DC51BB00DE3F1A /* CreateAlarmView */,
+				D71819B017DC3C5400DE3F1A /* LefeViewCellView */,
 				D730EBF017D1BD490022BBD6 /* LeftViewController.h */,
 				D730EBF117D1BD490022BBD6 /* LeftViewController.m */,
 				D730EBF217D1BD490022BBD6 /* LeftViewController.xib */,
@@ -339,6 +390,9 @@
 				D71819A617DB33C700DE3F1A /* minuteButton.png in Resources */,
 				D71819A717DB33C700DE3F1A /* rightTitleButton.png in Resources */,
 				D71819A817DB33C700DE3F1A /* secondButton.png in Resources */,
+				D71819B517DC3DA600DE3F1A /* LeftViewCellView.xib in Resources */,
+				D71819BD17DC51DC00DE3F1A /* CreateAlarmViewController.xib in Resources */,
+				D71819C317DC52F900DE3F1A /* FootBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +403,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71819C417DC575700DE3F1A /* CreateAlarmViewController.m in Sources */,
+				D71819B717DC426600DE3F1A /* Alarm.m in Sources */,
+				D71819B817DC426600DE3F1A /* AlarmDataController.m in Sources */,
+				D71819B617DC423B00DE3F1A /* Utility.m in Sources */,
 				D730EBFA17D1BF840022BBD6 /* ClockView.m in Sources */,
 				D730EBFB17D1BF840022BBD6 /* MMDrawerBarButtonItem.m in Sources */,
 				D730EBFC17D1BF840022BBD6 /* MMDrawerController.m in Sources */,
@@ -360,6 +418,8 @@
 				D730EBF317D1BD490022BBD6 /* LeftViewController.m in Sources */,
 				D730EBF817D1BD590022BBD6 /* RightViewController.m in Sources */,
 				D718199A17DAE6E000DE3F1A /* TitleBarView.m in Sources */,
+				D71819B317DC3D7F00DE3F1A /* LeftViewCellView.m in Sources */,
+				D71819C117DC52E700DE3F1A /* FootBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

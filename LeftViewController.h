@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AlarmDataController.h"
+#import "Utility.h"
+#import "FootBarView.h"
+#import "CreateAlarmViewController.h"
 
 @interface LeftViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
@@ -14,12 +18,13 @@
     // View of this Controller
     UIView * _titleBar;
     UITableView * _tableView;
-    UIView * _footBar;
+    FootBarView * _footBar;
+    Utility * _utility;
     
     
     
 }
 // DataSource of _tableView
-@property(nonatomic, strong) NSMutableArray * dataSourceArray;
+@property(nonatomic, strong) AlarmDataController *alarmDataController;
 
 @end
