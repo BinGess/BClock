@@ -7,6 +7,8 @@
 //
 
 #import "CreateAlarmViewController.h"
+#import "CenterClockViewController.h"
+#import "AlarmDataController.h"
 
 
 static const NSInteger SectionAccount = 3;
@@ -98,17 +100,19 @@ static const NSInteger sectionLabel = 2;
 
 - (IBAction)backButton:(id)sender
 {
-   //  MainViewController * mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    //[self presentViewController:mainViewController animated:YES completion:nil];
+    
+    AlarmDataController * alarmController = [AlarmDataController sharedInstanceMethod];
+
+   [self presentViewController: alarmController.mmDrawerController animated:YES completion:nil];
     
 }
 
 - (IBAction)addButton:(id)sender
 {
-    //[_delegate addAlarmWithInfo:@"Alarm" Date:_date];
+    [_delegate addAlarmWithInfo:@"Alarm" Date:_date];
+    [self presentViewController:[AlarmDataController sharedInstanceMethod].mmDrawerController animated:YES completion:nil];
 
-    //MainViewController * mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    //[self presentViewController:mainViewController animated:YES completion:Nil];
+
 
 }
 

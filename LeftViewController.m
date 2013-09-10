@@ -9,13 +9,20 @@
 #import "LeftViewController.h"
 #import "LeftViewCellView.h"
 
-@interface LeftViewController ()
+@interface LeftViewController ()<createAlarmDelegate>
+
 
 @end
 
 @implementation LeftViewController
 @synthesize alarmDataController = _alarmDataController;
 
+
+- (void)addAlarmWithInfo:(NSString *)info Date:(NSDate *)date
+{
+    [_alarmDataController addAlarmWithInfo:info Date:date];
+    [_tableView reloadData];
+}
 
 
 # pragma mark --UITableView Delegate

@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "Alarm.h"
 #import "Utility.h"
+#import "MMDrawerController.h"
 
 @interface AlarmDataController : NSObject
 
 
 @property (strong, nonatomic) NSMutableArray * alarmList;
+@property (strong, nonatomic) MMDrawerController * mmDrawerController;
 
 - (void)addAlarmWithInfo:(NSString *)info Date:(NSDate *) date;
 - (NSInteger) countOfAlarmList;

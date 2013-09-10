@@ -11,6 +11,7 @@
 #import "LeftViewController.h"
 #import "RightViewController.h"
 #import "CenterClockViewController.h"
+#import "AlarmDataController.h"
 
 
 @implementation AppDelegate
@@ -29,18 +30,21 @@
     UIViewController * rightDrawer = [[RightViewController alloc] init];
     rightDrawer.view.backgroundColor = [UIColor greenColor];
     
-    MMDrawerController * drawerController = [[MMDrawerController alloc]
-                                             initWithCenterViewController:center
-                                             leftDrawerViewController:leftDrawer
-                                             rightDrawerViewController:rightDrawer];
+    MMDrawerController * _mmDrawerController = [[MMDrawerController alloc]
+                           initWithCenterViewController:center
+                           leftDrawerViewController:leftDrawer
+                           rightDrawerViewController:rightDrawer];
     
-    [drawerController setMaximumRightDrawerWidth:200];
-    [drawerController setMaximumLeftDrawerWidth:200];
+    [_mmDrawerController setMaximumRightDrawerWidth:200];
+    [_mmDrawerController setMaximumLeftDrawerWidth:200];
     
-    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    [_mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [_mmDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+
+    AlarmDataController * x = [AlarmDataController sharedInstanceMethod];
+    x.mmDrawerController= _mmDrawerController;
     
-     _window.rootViewController = drawerController;
+     _window.rootViewController = _mmDrawerController;
     [_window makeKeyAndVisible];
     return YES;
 

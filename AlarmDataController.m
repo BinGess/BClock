@@ -6,11 +6,15 @@
 //
 
 #import "AlarmDataController.h"
+#import "LeftViewController.h"
+#import "RightViewController.h"
+#import "CenterClockViewController.h"
 
 static AlarmDataController * sharedInstance = nil;
 
 @implementation AlarmDataController
 @synthesize alarmList = _alarmList;
+@synthesize mmDrawerController = _mmDrawerController;
 
 - (id)init
 {
@@ -18,10 +22,38 @@ static AlarmDataController * sharedInstance = nil;
     if(self)
     {
         _alarmList = [[NSMutableArray alloc] init];
+       // [self GetMMDrawerController];
+        
        [_alarmList addObject:[[Alarm alloc] initAlarm:@"Alarm" Date:[NSDate date]]];
         
     }
     return self;
+}
+
+
+- (void)GetMMDrawerController
+{
+    LeftViewController * leftDrawer = [[LeftViewController alloc] init];
+    leftDrawer.view.backgroundColor = [UIColor blackColor];
+    
+    CenterClockViewController * center = [[CenterClockViewController alloc] init];
+    
+    UIViewController * rightDrawer = [[RightViewController alloc] init];
+    rightDrawer.view.backgroundColor = [UIColor greenColor];
+    
+    _mmDrawerController = [[MMDrawerController alloc]
+                                             initWithCenterViewController:center
+                                             leftDrawerViewController:leftDrawer
+                                             rightDrawerViewController:rightDrawer];
+    
+    [_mmDrawerController setMaximumRightDrawerWidth:200];
+    [_mmDrawerController setMaximumLeftDrawerWidth:200];
+    
+    [_mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [_mmDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    self.mmDrawerController = _mmDrawerController;
+    
 }
 
 +(AlarmDataController *)sharedInstanceMethod
