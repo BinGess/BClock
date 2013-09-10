@@ -9,6 +9,8 @@
 #import "CreateAlarmViewController.h"
 #import "CenterClockViewController.h"
 #import "AlarmDataController.h"
+#import "LeftViewController.h"
+#import "RightViewController.h"
 
 
 static const NSInteger SectionAccount = 3;
@@ -98,19 +100,44 @@ static const NSInteger sectionLabel = 2;
     _date = [(UIDatePicker *)sender date];
 }
 
+- (MMDrawerController *)getMMDrawerController
+{
+    LeftViewController * leftDrawer = [[LeftViewController alloc] init];
+    leftDrawer.view.backgroundColor = [UIColor blackColor];
+    
+    CenterClockViewController * center = [[CenterClockViewController alloc] init];
+    
+    UIViewController * rightDrawer = [[RightViewController alloc] init];
+    rightDrawer.view.backgroundColor = [UIColor greenColor];
+    
+    MMDrawerController * _mmDrawerController = [[MMDrawerController alloc]
+                                                initWithCenterViewController:center
+                                                leftDrawerViewController:leftDrawer
+                                                rightDrawerViewController:rightDrawer];
+    
+    [_mmDrawerController setMaximumRightDrawerWidth:200];
+    [_mmDrawerController setMaximumLeftDrawerWidth:200];
+    
+    [_mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [_mmDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+
+    return _mmDrawerController;
+
+}
+
 - (IBAction)backButton:(id)sender
 {
     
-    AlarmDataController * alarmController = [AlarmDataController sharedInstanceMethod];
+    //AlarmDataController * alarmController = [AlarmDataController sharedInstanceMethod];
 
-   [self presentViewController: alarmController.mmDrawerController animated:YES completion:nil];
+   [self presentViewController: [self getMMDrawerController] animated:YES completion:nil];
     
 }
 
 - (IBAction)addButton:(id)sender
 {
     [_delegate addAlarmWithInfo:@"Alarm" Date:_date];
-    [self presentViewController:[AlarmDataController sharedInstanceMethod].mmDrawerController animated:YES completion:nil];
+    [self presentViewController:[self getMMDrawerController] animated:YES completion:nil];
 
 
 
