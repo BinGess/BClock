@@ -58,14 +58,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self initMainView]; 
-    [self initTitleBarView];
-    [self initClockView];
+  
 }
 //[containerLayer setBackgroundColor:[UIColor colorWithRed:0.16 green:0.21 blue:0.26 alpha:1.0].CGColor];
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self initMainView];
+    [self initTitleBarView];
+    [self initClockView];
     [_clockView start];
 }
 

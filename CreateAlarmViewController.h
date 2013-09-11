@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Utility.h"
+#import "AlarmDataController.h"
 
 
 @protocol createAlarmDelegate;
@@ -17,6 +18,7 @@
 
     NSDate * _date;
     Utility * _utility;
+    AlarmDataController * _alarmDataController;
 }
 
 @property (strong, nonatomic) id<createAlarmDelegate> delegate;

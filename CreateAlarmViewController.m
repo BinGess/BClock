@@ -136,7 +136,11 @@ static const NSInteger sectionLabel = 2;
 
 - (IBAction)addButton:(id)sender
 {
-    [_delegate addAlarmWithInfo:@"Alarm" Date:_date];
+    _alarmDataController = [AlarmDataController sharedInstanceMethod];
+    [_alarmDataController addAlarmWithInfo:@"alarm" Date:[NSDate date]];
+    //[_delegate addAlarmWithInfo:@"Alarm" Date:_date];
+    
+    
     [self presentViewController:[self getMMDrawerController] animated:YES completion:nil];
 
 
