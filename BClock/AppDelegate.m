@@ -35,8 +35,8 @@
                            leftDrawerViewController:leftDrawer
                            rightDrawerViewController:rightDrawer];
     
-    [_mmDrawerController setMaximumRightDrawerWidth:200];
-    [_mmDrawerController setMaximumLeftDrawerWidth:200];
+    [_mmDrawerController setMaximumRightDrawerWidth:250];
+    [_mmDrawerController setMaximumLeftDrawerWidth:250];
     
     [_mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [_mmDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];

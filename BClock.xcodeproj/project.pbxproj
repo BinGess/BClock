@@ -50,6 +50,8 @@
 		D730EBFD17D1BF840022BBD6 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = D730EBD717D1B1B70022BBD6 /* MMDrawerVisualState.m */; };
 		D730EBFE17D1BF840022BBD6 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730EBD917D1B1B70022BBD6 /* UIViewController+MMDrawerController.m */; };
 		D730EC0017D1C1EC0022BBD6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBFF17D1C1EC0022BBD6 /* QuartzCore.framework */; };
+		D79976C317E74DA8000689ED /* ButtonStatusTrue.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C117E74DA8000689ED /* ButtonStatusTrue.png */; };
+		D79976C417E74DA8000689ED /* buttonStatusFalse.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C217E74DA8000689ED /* buttonStatusFalse.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +117,8 @@
 		D730EBF617D1BD590022BBD6 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		D730EBF717D1BD590022BBD6 /* RightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightViewController.xib; sourceTree = "<group>"; };
 		D730EBFF17D1C1EC0022BBD6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D79976C117E74DA8000689ED /* ButtonStatusTrue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonStatusTrue.png; sourceTree = "<group>"; };
+		D79976C217E74DA8000689ED /* buttonStatusFalse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonStatusFalse.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,8 @@
 		D730EBE317D1B4A50022BBD6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D79976C117E74DA8000689ED /* ButtonStatusTrue.png */,
+				D79976C217E74DA8000689ED /* buttonStatusFalse.png */,
 				D718199D17DB33C700DE3F1A /* clockBackground.png */,
 				D718199E17DB33C700DE3F1A /* hourButton.png */,
 				D718199F17DB33C700DE3F1A /* leftTitleButton.png */,
@@ -393,6 +399,8 @@
 				D71819B517DC3DA600DE3F1A /* LeftViewCellView.xib in Resources */,
 				D71819BD17DC51DC00DE3F1A /* CreateAlarmViewController.xib in Resources */,
 				D71819C317DC52F900DE3F1A /* FootBarView.xib in Resources */,
+				D79976C317E74DA8000689ED /* ButtonStatusTrue.png in Resources */,
+				D79976C417E74DA8000689ED /* buttonStatusFalse.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
