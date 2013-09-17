@@ -9,7 +9,7 @@
 #import "LeftViewController.h"
 #import "LeftViewCellView.h"
 
-@interface LeftViewController ()<createAlarmDelegate>
+@interface LeftViewController ()<createAlarmDelegate,actionLeftViewCellDelegate>
 
 
 @end
@@ -17,6 +17,24 @@
 @implementation LeftViewController
 @synthesize alarmDataController = _alarmDataController;
 
+- (void)actionLeftViewCellCheckButton:sender
+{
+    // 拿到这个Alarm的行号以后，将更改这个闹钟的状态，已经更改此时的状态图片
+    int i = [_tableView indexPathForCell:(UITableViewCell *)[[sender superview] superview]].row;
+    
+    Alarm * alarm = [_alarmDataController.alarmList objectAtIndex:i];
+    
+    if (alarm.availability) {
+        
+        alarm.availability = NO;
+    }
+    else
+    {
+        alarm.availability = YES;
+    }
+    
+    [_tableView reloadData];
+}
 
 - (void)addAlarmWithInfo:(NSString *)info Date:(NSDate *)date
 {
@@ -42,12 +60,22 @@
         NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"LeftViewCellView"
                                                     owner:self
                                                   options:nil];
+        
         cell = [_nib objectAtIndex:0];
+        cell.delegate = self;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
     
     Alarm * alarm = [_alarmDataController.alarmList objectAtIndex:indexPath.row];
+    if(alarm.availability)
+    {
+        [cell.statusButton setBackgroundImage: [UIImage imageNamed:@"ButtonStatusTrue.png" ] forState:UIControlStateNormal];
+    }else
+    {
+    
+        [cell.statusButton setBackgroundImage: [UIImage imageNamed:@"buttonStatusFalse.png" ] forState:UIControlStateNormal];
+    }
     cell.timeText.text = [_utility changeDateFormat:alarm.date];
     cell.nameLabel.text = alarm.info;
 

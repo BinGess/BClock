@@ -9,6 +9,7 @@
 #import "LeftViewCellView.h"
 
 @implementation LeftViewCellView
+@synthesize delegate = _delegate;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -28,6 +29,7 @@
 
 - (IBAction)statusButton:(id)sender
 {
+    [_delegate actionLeftViewCellCheckButton:sender];
       
 }
 @end

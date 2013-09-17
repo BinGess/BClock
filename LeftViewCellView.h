@@ -8,12 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol actionLeftViewCellDelegate;
+
 @interface LeftViewCellView : UITableViewCell
+
 
 @property (strong, nonatomic) IBOutlet UILabel *timeText;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UIButton *statusButton;
+@property (strong, nonatomic) id<actionLeftViewCellDelegate> delegate;
 
 
 - (IBAction)statusButton:(id)sender;
+
+@end
+
+@protocol actionLeftViewCellDelegate <NSObject>
+
+@required
+
+-(void) actionLeftViewCellCheckButton:(id)sender;
+
 @end
