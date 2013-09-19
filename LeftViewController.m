@@ -8,6 +8,7 @@
 
 #import "LeftViewController.h"
 #import "LeftViewCellView.h"
+#import "Utility.h"
 
 @interface LeftViewController ()<createAlarmDelegate,actionLeftViewCellDelegate>
 
@@ -26,11 +27,13 @@
     
     if (alarm.availability) {
         
-        alarm.availability = NO;
+        [[_alarmDataController.alarmList objectAtIndex:i] setAvailability:NO];
+        [Utility removeNotification:alarm.notification];
     }
     else
     {
         alarm.availability = YES;
+       [Utility setNotificationWith:alarm.date];
     }
     
     [_tableView reloadData];
@@ -68,10 +71,11 @@
     }
     
     Alarm * alarm = [_alarmDataController.alarmList objectAtIndex:indexPath.row];
-    if(alarm.availability)
+    
+    if(alarm.availability == YES)
     {
         [cell.statusButton setBackgroundImage: [UIImage imageNamed:@"ButtonStatusTrue.png" ] forState:UIControlStateNormal];
-    }else
+    }else if(alarm.availability == NO)
     {
     
         [cell.statusButton setBackgroundImage: [UIImage imageNamed:@"buttonStatusFalse.png" ] forState:UIControlStateNormal];

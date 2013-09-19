@@ -24,7 +24,10 @@ static AlarmDataController * sharedInstance = nil;
         _alarmList = [[NSMutableArray alloc] init];
        // [self GetMMDrawerController];
         
-       [_alarmList addObject:[[Alarm alloc] initAlarm:@"Alarm" Date:[NSDate date]]];
+       //[_alarmList addObject:[[Alarm alloc] initAlarm:@"Alarm" Date:[NSDate date]]];
+        
+        
+        [self addAlarmWithInfo:@"Alarm" Date:[NSDate date]];
         
     }
     return self;
@@ -90,7 +93,7 @@ static AlarmDataController * sharedInstance = nil;
 // addAlarm and setLocalNotificaiton for a Alarm
 - (void)addAlarmWithInfo:(NSString *)info Date:(NSDate *)date
 {
-    Alarm * alarm = [[Alarm alloc] initAlarm:info Date:date];
+    Alarm * alarm = [[Alarm alloc] initAlarm:info Date:date Availability:YES];
     
     UILocalNotification * localNotification = [Utility setNotificationWith:date];
     alarm.notification  = localNotification;

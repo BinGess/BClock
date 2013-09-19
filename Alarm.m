@@ -40,4 +40,29 @@
 
     return self;
 }
+
+- (void) setAvailability:(BOOL)availability
+{
+    _availability = availability;
+//    if (availability == YES)
+//    {
+//        // 如果此时设置的状态为True,则重新设置闹钟状态为开启
+//        
+//        [Utility setNotificationWith:self.date];
+//        
+//    }else if (availability == NO)
+//    {
+//         // 如果此时设置的状态为False,则重新设置闹钟状态为关闭
+//        [Utility removeNotification:self.notification];
+//    }
+//    
+
+}
+
+- (BOOL) availability
+{
+
+    return _availability;
+}
+
 @end

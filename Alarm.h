@@ -8,6 +8,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import "Utility.h"
 
 @interface Alarm : NSObject
 
