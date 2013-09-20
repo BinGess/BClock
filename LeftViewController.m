@@ -80,6 +80,9 @@
     
         [cell.statusButton setBackgroundImage: [UIImage imageNamed:@"buttonStatusFalse.png" ] forState:UIControlStateNormal];
     }
+    
+    [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
+    
     cell.timeText.text = [_utility changeDateFormat:alarm.date];
     cell.nameLabel.text = alarm.info;
 

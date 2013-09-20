@@ -46,6 +46,14 @@
     
      _window.rootViewController = _mmDrawerController;
     [_window makeKeyAndVisible];
+    
+    // 当一个提醒处理后，则获得当前最近的未处理的通知，执行处理
+    UILocalNotification * localNotif=[launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if(localNotif != Nil)
+    {
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    }
+    
     return YES;
 
 }
@@ -76,5 +84,20 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    
+    UIApplicationState state = application.applicationState;
+    //    NSLog(@"%@,%d",notification,state);
+    if (state == UIApplicationStateActive) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提醒"
+                                                         message:notification.alertBody
+                                                        delegate:self
+                                               cancelButtonTitle:@"Close"
+                                               otherButtonTitles:@"OK",nil];
+        [alert show];
+    }
+}
+
 
 @end

@@ -51,6 +51,12 @@
 		D730EBFD17D1BF840022BBD6 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = D730EBD717D1B1B70022BBD6 /* MMDrawerVisualState.m */; };
 		D730EBFE17D1BF840022BBD6 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730EBD917D1B1B70022BBD6 /* UIViewController+MMDrawerController.m */; };
 		D730EC0017D1C1EC0022BBD6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBFF17D1C1EC0022BBD6 /* QuartzCore.framework */; };
+		D740B07417EC3F2D0031CD97 /* RightViewCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D740B07317EC3F2D0031CD97 /* RightViewCellView.m */; };
+		D740B07617EC3F500031CD97 /* RightViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D740B07517EC3F500031CD97 /* RightViewCellView.xib */; };
+		D740B07B17EC4DEF0031CD97 /* StatusTrueNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = D740B07717EC4DEF0031CD97 /* StatusTrueNormal.png */; };
+		D740B07C17EC4DEF0031CD97 /* StatusFalseDisable.png in Resources */ = {isa = PBXBuildFile; fileRef = D740B07817EC4DEF0031CD97 /* StatusFalseDisable.png */; };
+		D740B07D17EC4DEF0031CD97 /* StatusTrueDisable.png in Resources */ = {isa = PBXBuildFile; fileRef = D740B07917EC4DEF0031CD97 /* StatusTrueDisable.png */; };
+		D740B07E17EC4DEF0031CD97 /* StatusFalseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = D740B07A17EC4DEF0031CD97 /* StatusFalseNormal.png */; };
 		D79976C317E74DA8000689ED /* ButtonStatusTrue.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C117E74DA8000689ED /* ButtonStatusTrue.png */; };
 		D79976C417E74DA8000689ED /* ButtonStatusFalse.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C217E74DA8000689ED /* ButtonStatusFalse.png */; };
 /* End PBXBuildFile section */
@@ -119,6 +125,13 @@
 		D730EBF617D1BD590022BBD6 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		D730EBF717D1BD590022BBD6 /* RightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightViewController.xib; sourceTree = "<group>"; };
 		D730EBFF17D1C1EC0022BBD6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D740B07217EC3F2D0031CD97 /* RightViewCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewCellView.h; sourceTree = "<group>"; };
+		D740B07317EC3F2D0031CD97 /* RightViewCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewCellView.m; sourceTree = "<group>"; };
+		D740B07517EC3F500031CD97 /* RightViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightViewCellView.xib; sourceTree = "<group>"; };
+		D740B07717EC4DEF0031CD97 /* StatusTrueNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusTrueNormal.png; sourceTree = "<group>"; };
+		D740B07817EC4DEF0031CD97 /* StatusFalseDisable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusFalseDisable.png; sourceTree = "<group>"; };
+		D740B07917EC4DEF0031CD97 /* StatusTrueDisable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusTrueDisable.png; sourceTree = "<group>"; };
+		D740B07A17EC4DEF0031CD97 /* StatusFalseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusFalseNormal.png; sourceTree = "<group>"; };
 		D79976C117E74DA8000689ED /* ButtonStatusTrue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonStatusTrue.png; sourceTree = "<group>"; };
 		D79976C217E74DA8000689ED /* ButtonStatusFalse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonStatusFalse.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -288,6 +301,10 @@
 		D730EBE317D1B4A50022BBD6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D740B07717EC4DEF0031CD97 /* StatusTrueNormal.png */,
+				D740B07817EC4DEF0031CD97 /* StatusFalseDisable.png */,
+				D740B07917EC4DEF0031CD97 /* StatusTrueDisable.png */,
+				D740B07A17EC4DEF0031CD97 /* StatusFalseNormal.png */,
 				D704397717EC12F900CDE008 /* icom.png */,
 				D79976C117E74DA8000689ED /* ButtonStatusTrue.png */,
 				D79976C217E74DA8000689ED /* ButtonStatusFalse.png */,
@@ -322,11 +339,22 @@
 		D730EBEF17D1BD290022BBD6 /* RightView */ = {
 			isa = PBXGroup;
 			children = (
+				D740B07117EC3F020031CD97 /* RightViewCellView */,
 				D730EBF517D1BD590022BBD6 /* RightViewController.h */,
 				D730EBF617D1BD590022BBD6 /* RightViewController.m */,
 				D730EBF717D1BD590022BBD6 /* RightViewController.xib */,
 			);
 			name = RightView;
+			sourceTree = "<group>";
+		};
+		D740B07117EC3F020031CD97 /* RightViewCellView */ = {
+			isa = PBXGroup;
+			children = (
+				D740B07217EC3F2D0031CD97 /* RightViewCellView.h */,
+				D740B07317EC3F2D0031CD97 /* RightViewCellView.m */,
+				D740B07517EC3F500031CD97 /* RightViewCellView.xib */,
+			);
+			name = RightViewCellView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +433,11 @@
 				D79976C317E74DA8000689ED /* ButtonStatusTrue.png in Resources */,
 				D79976C417E74DA8000689ED /* ButtonStatusFalse.png in Resources */,
 				D704397817EC12F900CDE008 /* icom.png in Resources */,
+				D740B07617EC3F500031CD97 /* RightViewCellView.xib in Resources */,
+				D740B07B17EC4DEF0031CD97 /* StatusTrueNormal.png in Resources */,
+				D740B07C17EC4DEF0031CD97 /* StatusFalseDisable.png in Resources */,
+				D740B07D17EC4DEF0031CD97 /* StatusTrueDisable.png in Resources */,
+				D740B07E17EC4DEF0031CD97 /* StatusFalseNormal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +465,7 @@
 				D718199A17DAE6E000DE3F1A /* TitleBarView.m in Sources */,
 				D71819B317DC3D7F00DE3F1A /* LeftViewCellView.m in Sources */,
 				D71819C117DC52E700DE3F1A /* FootBarView.m in Sources */,
+				D740B07417EC3F2D0031CD97 /* RightViewCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
