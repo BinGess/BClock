@@ -58,6 +58,8 @@
 		D740B07D17EC4DEF0031CD97 /* StatusTrueDisable.png in Resources */ = {isa = PBXBuildFile; fileRef = D740B07917EC4DEF0031CD97 /* StatusTrueDisable.png */; };
 		D740B07E17EC4DEF0031CD97 /* StatusFalseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = D740B07A17EC4DEF0031CD97 /* StatusFalseNormal.png */; };
 		D74CF98917EDA907008C7AF1 /* DWTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = D74CF98817EDA8E9008C7AF1 /* DWTagList.m */; };
+		D74CF98D17EDAA2F008C7AF1 /* TextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74CF98C17EDAA2F008C7AF1 /* TextInputView.m */; };
+		D74CF98F17EDAAD6008C7AF1 /* TextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74CF98E17EDAAD6008C7AF1 /* TextInputView.xib */; };
 		D79976C317E74DA8000689ED /* ButtonStatusTrue.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C117E74DA8000689ED /* ButtonStatusTrue.png */; };
 		D79976C417E74DA8000689ED /* ButtonStatusFalse.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C217E74DA8000689ED /* ButtonStatusFalse.png */; };
 /* End PBXBuildFile section */
@@ -135,6 +137,9 @@
 		D740B07A17EC4DEF0031CD97 /* StatusFalseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusFalseNormal.png; sourceTree = "<group>"; };
 		D74CF98717EDA8E9008C7AF1 /* DWTagList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWTagList.h; sourceTree = "<group>"; };
 		D74CF98817EDA8E9008C7AF1 /* DWTagList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWTagList.m; sourceTree = "<group>"; };
+		D74CF98B17EDAA2F008C7AF1 /* TextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputView.h; sourceTree = "<group>"; };
+		D74CF98C17EDAA2F008C7AF1 /* TextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputView.m; sourceTree = "<group>"; };
+		D74CF98E17EDAAD6008C7AF1 /* TextInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextInputView.xib; sourceTree = "<group>"; };
 		D79976C117E74DA8000689ED /* ButtonStatusTrue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonStatusTrue.png; sourceTree = "<group>"; };
 		D79976C217E74DA8000689ED /* ButtonStatusFalse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonStatusFalse.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,7 +193,8 @@
 		D71819B917DC51BB00DE3F1A /* CreateAlarmView */ = {
 			isa = PBXGroup;
 			children = (
-				D74CF98617EDA8D5008C7AF1 /* TagList */,
+				D74CF98A17EDA9F8008C7AF1 /* TextInputView */,
+				D74CF98617EDA8D5008C7AF1 /* TagListView */,
 				D71819BA17DC51D200DE3F1A /* CreateAlarmViewController.h */,
 				D71819BB17DC51D200DE3F1A /* CreateAlarmViewController.m */,
 				D71819BC17DC51DC00DE3F1A /* CreateAlarmViewController.xib */,
@@ -361,13 +367,23 @@
 			name = RightViewCellView;
 			sourceTree = "<group>";
 		};
-		D74CF98617EDA8D5008C7AF1 /* TagList */ = {
+		D74CF98617EDA8D5008C7AF1 /* TagListView */ = {
 			isa = PBXGroup;
 			children = (
 				D74CF98717EDA8E9008C7AF1 /* DWTagList.h */,
 				D74CF98817EDA8E9008C7AF1 /* DWTagList.m */,
 			);
-			name = TagList;
+			name = TagListView;
+			sourceTree = "<group>";
+		};
+		D74CF98A17EDA9F8008C7AF1 /* TextInputView */ = {
+			isa = PBXGroup;
+			children = (
+				D74CF98B17EDAA2F008C7AF1 /* TextInputView.h */,
+				D74CF98C17EDAA2F008C7AF1 /* TextInputView.m */,
+				D74CF98E17EDAAD6008C7AF1 /* TextInputView.xib */,
+			);
+			name = TextInputView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +467,7 @@
 				D740B07C17EC4DEF0031CD97 /* StatusFalseDisable.png in Resources */,
 				D740B07D17EC4DEF0031CD97 /* StatusTrueDisable.png in Resources */,
 				D740B07E17EC4DEF0031CD97 /* StatusFalseNormal.png in Resources */,
+				D74CF98F17EDAAD6008C7AF1 /* TextInputView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +497,7 @@
 				D71819B317DC3D7F00DE3F1A /* LeftViewCellView.m in Sources */,
 				D71819C117DC52E700DE3F1A /* FootBarView.m in Sources */,
 				D740B07417EC3F2D0031CD97 /* RightViewCellView.m in Sources */,
+				D74CF98D17EDAA2F008C7AF1 /* TextInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
