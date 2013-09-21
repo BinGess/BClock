@@ -9,6 +9,8 @@
 #import "RightViewController.h"
 #import "RightViewCellView.h"
 
+static const int rowCount = 6;
+
 @interface RightViewController ()<actionRightViewCellDelegate>
 
 @end
@@ -45,39 +47,86 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Setting";
+   
+    
+    if(indexPath.row == 0)
+    {
+    
     RightViewCellView *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if(cell == nil)
     {
-        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
         
         NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"RightViewCellView"
                                                    owner:self
                                                  options:nil];
-        
         cell = [_nib objectAtIndex:0];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        
     }
     
     [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
     
     [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
     [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
-    
     cell.TextLabel.text = @"One";
-    //cell.detailTextLabel.text = @"SettingTwo";
+
     return cell;
+        
+    }else if (indexPath.row == 1)
+    {
+        RightViewCellView *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if(cell == nil)
+        {
+            
+            NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"RightViewCellView"
+                                                        owner:self
+                                                      options:nil];
+            cell = [_nib objectAtIndex:0];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
+        
+        [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
+        [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
+        cell.TextLabel.text = @"Two";
+        
+        return cell;
+  
+    }else if (indexPath.row == 2)
+    {
+        RightViewCellView *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if(cell == nil)
+        {
+            
+            NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"RightViewCellView"
+                                                        owner:self
+                                                      options:nil];
+            cell = [_nib objectAtIndex:0];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
+        
+        [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
+        [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
+        cell.TextLabel.text = @"Three";
+        
+        return cell;
+        
+    }
+
+ 
+    return nil;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return rowCount;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 70;
 }
 
 # pragma mark--
@@ -97,6 +146,7 @@
     _tableView = [[UITableView alloc] initWithFrame:tableViewRect style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    [_tableView setSeparatorColor:[UIColor colorWithRed:0.2 green:0.24 blue:0.29 alpha:1.0]];
     [_tableView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
 
     [self.view addSubview:_tableView];

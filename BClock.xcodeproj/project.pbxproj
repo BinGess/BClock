@@ -57,6 +57,7 @@
 		D740B07C17EC4DEF0031CD97 /* StatusFalseDisable.png in Resources */ = {isa = PBXBuildFile; fileRef = D740B07817EC4DEF0031CD97 /* StatusFalseDisable.png */; };
 		D740B07D17EC4DEF0031CD97 /* StatusTrueDisable.png in Resources */ = {isa = PBXBuildFile; fileRef = D740B07917EC4DEF0031CD97 /* StatusTrueDisable.png */; };
 		D740B07E17EC4DEF0031CD97 /* StatusFalseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = D740B07A17EC4DEF0031CD97 /* StatusFalseNormal.png */; };
+		D74CF98917EDA907008C7AF1 /* DWTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = D74CF98817EDA8E9008C7AF1 /* DWTagList.m */; };
 		D79976C317E74DA8000689ED /* ButtonStatusTrue.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C117E74DA8000689ED /* ButtonStatusTrue.png */; };
 		D79976C417E74DA8000689ED /* ButtonStatusFalse.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C217E74DA8000689ED /* ButtonStatusFalse.png */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,8 @@
 		D740B07817EC4DEF0031CD97 /* StatusFalseDisable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusFalseDisable.png; sourceTree = "<group>"; };
 		D740B07917EC4DEF0031CD97 /* StatusTrueDisable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusTrueDisable.png; sourceTree = "<group>"; };
 		D740B07A17EC4DEF0031CD97 /* StatusFalseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusFalseNormal.png; sourceTree = "<group>"; };
+		D74CF98717EDA8E9008C7AF1 /* DWTagList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWTagList.h; sourceTree = "<group>"; };
+		D74CF98817EDA8E9008C7AF1 /* DWTagList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWTagList.m; sourceTree = "<group>"; };
 		D79976C117E74DA8000689ED /* ButtonStatusTrue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonStatusTrue.png; sourceTree = "<group>"; };
 		D79976C217E74DA8000689ED /* ButtonStatusFalse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonStatusFalse.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +188,7 @@
 		D71819B917DC51BB00DE3F1A /* CreateAlarmView */ = {
 			isa = PBXGroup;
 			children = (
+				D74CF98617EDA8D5008C7AF1 /* TagList */,
 				D71819BA17DC51D200DE3F1A /* CreateAlarmViewController.h */,
 				D71819BB17DC51D200DE3F1A /* CreateAlarmViewController.m */,
 				D71819BC17DC51DC00DE3F1A /* CreateAlarmViewController.xib */,
@@ -205,6 +209,7 @@
 		D730EBA217D1B17D0022BBD6 = {
 			isa = PBXGroup;
 			children = (
+				D71819B917DC51BB00DE3F1A /* CreateAlarmView */,
 				D730EBD117D1B19C0022BBD6 /* MMDrawerController */,
 				D71819A917DC302100DE3F1A /* DataController */,
 				D730EBDA17D1B1C50022BBD6 /* CenterView */,
@@ -327,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				D71819BE17DC52BE00DE3F1A /* FootBarView */,
-				D71819B917DC51BB00DE3F1A /* CreateAlarmView */,
 				D71819B017DC3C5400DE3F1A /* LefeViewCellView */,
 				D730EBF017D1BD490022BBD6 /* LeftViewController.h */,
 				D730EBF117D1BD490022BBD6 /* LeftViewController.m */,
@@ -355,6 +359,15 @@
 				D740B07517EC3F500031CD97 /* RightViewCellView.xib */,
 			);
 			name = RightViewCellView;
+			sourceTree = "<group>";
+		};
+		D74CF98617EDA8D5008C7AF1 /* TagList */ = {
+			isa = PBXGroup;
+			children = (
+				D74CF98717EDA8E9008C7AF1 /* DWTagList.h */,
+				D74CF98817EDA8E9008C7AF1 /* DWTagList.m */,
+			);
+			name = TagList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74CF98917EDA907008C7AF1 /* DWTagList.m in Sources */,
 				D71819C417DC575700DE3F1A /* CreateAlarmViewController.m in Sources */,
 				D71819B717DC426600DE3F1A /* Alarm.m in Sources */,
 				D71819B817DC426600DE3F1A /* AlarmDataController.m in Sources */,

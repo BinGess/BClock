@@ -128,6 +128,8 @@
     _tableView = [[UITableView alloc] initWithFrame:tableViewRect style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    [_tableView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
+    [_tableView setSeparatorColor:[UIColor colorWithRed:0.2 green:0.24 blue:0.29 alpha:1.0]];
     
     
     NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"FootBarView" owner:self options:nil];
