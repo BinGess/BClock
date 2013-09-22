@@ -15,15 +15,21 @@
 
 @protocol createAlarmDelegate;
 
-@interface CreateAlarmViewController : UIViewController<DWTagListDelegate>
+@interface CreateAlarmViewController : UIViewController<DWTagListDelegate,UITextFieldDelegate>
 {
 
     NSDate * _date;
+    
     Utility * _utility;
+    
     AlarmDataController * _alarmDataController;
     
     TextInputView * _textInputView;
+    
     DWTagList * _dwtaglist;
+    
+    NSString * _labelString;
+    
 }
 
 @property (strong, nonatomic) id<createAlarmDelegate> delegate;

@@ -32,6 +32,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _date = [NSDate date];
+    
     [self initTagListView];
     [self initTextInputView];
 
@@ -43,18 +46,19 @@
 
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    _labelString = textField.text;
+    [_textInputView.inputView resignFirstResponder];
+    return YES;
+}
 
-- (void)selectedTag:(NSString *)tagName{
-    
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message"
-//                                                    message:[NSString stringWithFormat:@"You tapped tag %@", tagName]
-//                                                   delegate:nil
-//                                          cancelButtonTitle:@"Ok"
-//                                          otherButtonTitles:nil];
-//    [alert show];
+
+
+- (void)selectedTag:(NSString *)tagName
+{
     _textInputView.inputView.text = tagName;
-    
-    
+    _labelString = tagName;
 }
 
 
@@ -62,7 +66,6 @@
 
 - (void)initTextInputView
 {
-    
     CGRect inputViewRect;
     {
         inputViewRect.origin.x = 35.0f;
@@ -76,6 +79,7 @@
                                               options:nil];
     _textInputView = [_nib objectAtIndex:0];
     _textInputView.frame = inputViewRect;
+    _textInputView.inputView.delegate = self;//将自定义控件中的UITextFieldView的代理关联到该ViewController
     
     [self.view addSubview:_textInputView];
   
@@ -108,7 +112,10 @@
 - (IBAction)datePickerChanged:(id)sender
 {
     _date = [(UIDatePicker *)sender date];
+
 }
+
+
 
 - (MMDrawerController *)getMMDrawerController
 {
@@ -137,24 +144,14 @@
 
 - (IBAction)backButton:(id)sender
 {
-    
-    //AlarmDataController * alarmController = [AlarmDataController sharedInstanceMethod];
-
    [self presentViewController: [self getMMDrawerController] animated:YES completion:nil];
-    
 }
 
 - (IBAction)addButton:(id)sender
 {
     _alarmDataController = [AlarmDataController sharedInstanceMethod];
-    [_alarmDataController addAlarmWithInfo:@"alarm" Date:[NSDate date]];
-    //[_delegate addAlarmWithInfo:@"Alarm" Date:_date];
-    
-    
-    [self presentViewController:[self getMMDrawerController] animated:YES completion:nil];
-
-
-
+   [_alarmDataController addAlarmWithInfo:_labelString Date:_date];
+   [self presentViewController:[self getMMDrawerController] animated:YES completion:nil];
 }
 
 
