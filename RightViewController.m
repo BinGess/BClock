@@ -122,8 +122,10 @@ static const int rowCount = 4;
             cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         }
         
+        cell.textLabel.text = @"Snooze";
+
         
-        UIImage *image = [UIImage imageNamed:@"unchecked.png"];
+        UIImage *image = [UIImage imageNamed:@"CellAccessory.png"];
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         CGRect frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);

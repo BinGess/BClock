@@ -25,6 +25,7 @@
 		D71819C117DC52E700DE3F1A /* FootBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819C017DC52E700DE3F1A /* FootBarView.m */; };
 		D71819C317DC52F900DE3F1A /* FootBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71819C217DC52F900DE3F1A /* FootBarView.xib */; };
 		D71819C417DC575700DE3F1A /* CreateAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819BB17DC51D200DE3F1A /* CreateAlarmViewController.m */; };
+		D72D1FA117EEE48C00739BDC /* CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = D72D1FA017EEE48C00739BDC /* CellAccessory.png */; };
 		D730EBAF17D1B17D0022BBD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBAE17D1B17D0022BBD6 /* UIKit.framework */; };
 		D730EBB117D1B17D0022BBD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBB017D1B17D0022BBD6 /* Foundation.framework */; };
 		D730EBB317D1B17D0022BBD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBB217D1B17D0022BBD6 /* CoreGraphics.framework */; };
@@ -90,6 +91,7 @@
 		D71819BF17DC52E700DE3F1A /* FootBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootBarView.h; sourceTree = "<group>"; };
 		D71819C017DC52E700DE3F1A /* FootBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootBarView.m; sourceTree = "<group>"; };
 		D71819C217DC52F900DE3F1A /* FootBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootBarView.xib; sourceTree = "<group>"; };
+		D72D1FA017EEE48C00739BDC /* CellAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CellAccessory.png; sourceTree = "<group>"; };
 		D730EBAB17D1B17D0022BBD6 /* BClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D730EBAE17D1B17D0022BBD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D730EBB017D1B17D0022BBD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -312,6 +314,7 @@
 		D730EBE317D1B4A50022BBD6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D72D1FA017EEE48C00739BDC /* CellAccessory.png */,
 				D740B07717EC4DEF0031CD97 /* StatusTrueNormal.png */,
 				D740B07817EC4DEF0031CD97 /* StatusFalseDisable.png */,
 				D740B07917EC4DEF0031CD97 /* StatusTrueDisable.png */,
@@ -468,6 +471,7 @@
 				D740B07D17EC4DEF0031CD97 /* StatusTrueDisable.png in Resources */,
 				D740B07E17EC4DEF0031CD97 /* StatusFalseNormal.png in Resources */,
 				D74CF98F17EDAAD6008C7AF1 /* TextInputView.xib in Resources */,
+				D72D1FA117EEE48C00739BDC /* CellAccessory.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
