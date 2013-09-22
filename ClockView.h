@@ -2,8 +2,7 @@
 //  ClockView.h
 //  clock
 //
-//  Created by Ignacio Enriquez Gutierrez on 1/31/11.
-//  Copyright 2011 Nacho4D. All rights reserved.
+//  Copyright 2011 . All rights reserved.
 //  See the file License.txt for copying permission.
 //
 
@@ -29,6 +28,9 @@
 - (void)setMinHandImage:(CGImageRef)image;
 - (void)setSecHandImage:(CGImageRef)image;
 - (void)setClockBackgroundImage:(CGImageRef)image;
+
+
+- (void) updateClock:(NSTimer *)theTimer;
 
 //to customize hands size: adjust following values in .m file
 //HOURS_HAND_LENGTH

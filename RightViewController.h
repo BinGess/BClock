@@ -12,10 +12,7 @@
 {
     
     // View of this Controller
-    UIView * _titleBar;
     UITableView * _tableView;
-    UIView * _footBar;
-
 }
 
 // DataSource of _tableView

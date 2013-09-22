@@ -22,12 +22,13 @@ static AlarmDataController * sharedInstance = nil;
     if(self)
     {
         _alarmList = [[NSMutableArray alloc] init];
+        
        // [self GetMMDrawerController];
         
        //[_alarmList addObject:[[Alarm alloc] initAlarm:@"Alarm" Date:[NSDate date]]];
         
         
-        [self addAlarmWithInfo:@"Alarm" Date:[NSDate date]];
+      //  [self addAlarmWithInfo:@"Alarm" Date:[NSDate date]];
         
     }
     return self;

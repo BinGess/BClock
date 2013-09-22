@@ -9,7 +9,7 @@
 #import "RightViewController.h"
 #import "RightViewCellView.h"
 
-static const int rowCount = 6;
+static const int rowCount = 4;
 
 @interface RightViewController ()<actionRightViewCellDelegate>
 
@@ -41,7 +41,7 @@ static const int rowCount = 6;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_dataSourceArray count];
+    return rowCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,11 +85,9 @@ static const int rowCount = 6;
         }
         
         [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
-        
         [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
         [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
         cell.TextLabel.text = @"Two";
-        
         return cell;
   
     }else if (indexPath.row == 2)
@@ -113,6 +111,30 @@ static const int rowCount = 6;
         
         return cell;
         
+    }else if (indexPath.row == 3)
+    {
+    
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        }
+        
+        
+        UIImage *image = [UIImage imageNamed:@"unchecked.png"];
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        CGRect frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
+        button.frame = frame;
+       [button setBackgroundImage:image forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor clearColor];
+        cell.accessoryView = button;  
+        
+        return cell;
+    
+    
     }
 
  
@@ -121,7 +143,7 @@ static const int rowCount = 6;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return rowCount;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
