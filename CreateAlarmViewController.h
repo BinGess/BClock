@@ -15,7 +15,7 @@
 
 @protocol createAlarmDelegate;
 
-@interface CreateAlarmViewController : UIViewController
+@interface CreateAlarmViewController : UIViewController<DWTagListDelegate>
 {
 
     NSDate * _date;

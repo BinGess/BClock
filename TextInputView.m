@@ -9,6 +9,7 @@
 #import "TextInputView.h"
 
 @implementation TextInputView
+@synthesize inputView = _inputView;
 
 - (id)initWithFrame:(CGRect)frame
 {

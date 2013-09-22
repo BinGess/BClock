@@ -2,8 +2,8 @@
 //  CreateAlarmViewController.m
 //  XiaoMIAlarm
 //
-//  Created by 帅牛 on 13-6-11.
-//  Copyright (c) 2013年 郑 杰. All rights reserved.
+//  Created by Blake on 13-6-11.
+//  Copyright (c) 2013年 Blak. All rights reserved.
 //
 
 #import "CreateAlarmViewController.h"
@@ -12,11 +12,6 @@
 #import "LeftViewController.h"
 #import "RightViewController.h"
 
-
-static const NSInteger SectionAccount = 1;
-static const NSInteger SectionRepeat = 0;
-static const NSInteger SectionBell = 1;
-static const NSInteger sectionLabel = 2;
 
 @interface CreateAlarmViewController ()
 
@@ -37,6 +32,8 @@ static const NSInteger sectionLabel = 2;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initTagListView];
+    [self initTextInputView];
 
 }
 
@@ -46,18 +43,61 @@ static const NSInteger sectionLabel = 2;
 
 }
 
+
+- (void)selectedTag:(NSString *)tagName{
+    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message"
+//                                                    message:[NSString stringWithFormat:@"You tapped tag %@", tagName]
+//                                                   delegate:nil
+//                                          cancelButtonTitle:@"Ok"
+//                                          otherButtonTitles:nil];
+//    [alert show];
+    _textInputView.inputView.text = tagName;
+    
+    
+}
+
+
 #pragma mark initView
 
 - (void)initTextInputView
 {
-
-
+    
+    CGRect inputViewRect;
+    {
+        inputViewRect.origin.x = 35.0f;
+        inputViewRect.origin.y = 60.0f;
+        inputViewRect.size.width = 250.0f;
+        inputViewRect.size.height = 50.0f;
+    }
+    
+    NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"TextInputView"
+                                                owner:self
+                                              options:nil];
+    _textInputView = [_nib objectAtIndex:0];
+    _textInputView.frame = inputViewRect;
+    
+    [self.view addSubview:_textInputView];
+  
 }
 
 - (void)initTagListView
 {
+    CGRect tagListViewRect;
+    {
+        tagListViewRect.origin.x = 35.0f;
+        tagListViewRect.origin.y = 120.0f;
+        tagListViewRect.size.width = 250.0f;
+        tagListViewRect.size.height = 60.0f;
+    }
+    _dwtaglist = [[DWTagList alloc] initWithFrame:tagListViewRect];
+    
 
-
+   [_dwtaglist setAutomaticResize:YES];
+    NSArray *array = [[NSArray alloc] initWithObjects:@"Foo", @"Tag Label 1", @"Tag Label 2", @"Tag Label 3", @"Tag Label 4", @"Long long long long long long Tag", nil];
+    [_dwtaglist setTags:array];
+    [_dwtaglist setTagDelegate:self];
+    [self.view addSubview:_dwtaglist];
 
 }
 

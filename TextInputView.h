@@ -10,4 +10,5 @@
 
 @interface TextInputView : UIView
 
+@property (strong, nonatomic) IBOutlet UITextField *inputView;
 @end
