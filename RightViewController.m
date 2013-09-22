@@ -8,6 +8,7 @@
 
 #import "RightViewController.h"
 #import "RightViewCellView.h"
+#import "RightViewCellViewStytleTwo.h"
 
 static const int rowCount = 4;
 
@@ -67,7 +68,7 @@ static const int rowCount = 4;
     
     [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
     [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
-    cell.TextLabel.text = @"One";
+    cell.TextLabel.text = @"Alarm";
 
     return cell;
         
@@ -87,7 +88,7 @@ static const int rowCount = 4;
         [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
         [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
         [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
-        cell.TextLabel.text = @"Two";
+        cell.TextLabel.text = @"Snooze";
         return cell;
   
     }else if (indexPath.row == 2)
@@ -107,35 +108,32 @@ static const int rowCount = 4;
         
         [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
         [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
-        cell.TextLabel.text = @"Three";
+        cell.TextLabel.text = @"Vibration";
         
         return cell;
         
     }else if (indexPath.row == 3)
     {
-    
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil)
+        RightViewCellViewStytleTwo *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if(cell == nil)
         {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            
+            NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"RightViewCellViewStytleTwo"
+                                                        owner:self
+                                                      options:nil];
+            cell = [_nib objectAtIndex:0];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
-        cell.textLabel.text = @"Snooze";
+        [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
+        
+        [cell.cellButton setBackgroundImage:[UIImage imageNamed:@"CellAccessory.png"] forState:UIControlStateNormal];
 
-        
-        UIImage *image = [UIImage imageNamed:@"CellAccessory.png"];
-        
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        CGRect frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
-        button.frame = frame;
-       [button setBackgroundImage:image forState:UIControlStateNormal];
-        button.backgroundColor = [UIColor clearColor];
-        cell.accessoryView = button;  
+        cell.cellLabel.text = @"Help & FAQ";
         
         return cell;
-    
+
+            
     
     }
 

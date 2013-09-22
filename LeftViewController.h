@@ -11,15 +11,19 @@
 #import "Utility.h"
 #import "FootBarView.h"
 #import "CreateAlarmViewController.h"
+#import "LTitleBarView.h"
 
 @interface LeftViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
 
     // View of this Controller
-    UIView * _titleBar;
+    LTitleBarView * _titleBar;
     UITableView * _tableView;
     FootBarView * _footBar;
     Utility * _utility;
+    
+    UIView * _separatorLineOne;
+    UIView * _separatorLineTwo;
     
     
     

@@ -61,6 +61,10 @@
 		D74CF98917EDA907008C7AF1 /* DWTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = D74CF98817EDA8E9008C7AF1 /* DWTagList.m */; };
 		D74CF98D17EDAA2F008C7AF1 /* TextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74CF98C17EDAA2F008C7AF1 /* TextInputView.m */; };
 		D74CF98F17EDAAD6008C7AF1 /* TextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74CF98E17EDAAD6008C7AF1 /* TextInputView.xib */; };
+		D75A2EF517EF2429004A58A7 /* RightViewCellViewStytleTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = D75A2EF417EF2429004A58A7 /* RightViewCellViewStytleTwo.m */; };
+		D75A2EF717EF2448004A58A7 /* RightViewCellViewStytleTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75A2EF617EF2448004A58A7 /* RightViewCellViewStytleTwo.xib */; };
+		D75A2EFB17EF28C4004A58A7 /* LTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D75A2EFA17EF28C4004A58A7 /* LTitleBarView.m */; };
+		D75A2EFD17EF28D6004A58A7 /* LTitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75A2EFC17EF28D6004A58A7 /* LTitleBarView.xib */; };
 		D79976C317E74DA8000689ED /* ButtonStatusTrue.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C117E74DA8000689ED /* ButtonStatusTrue.png */; };
 		D79976C417E74DA8000689ED /* ButtonStatusFalse.png in Resources */ = {isa = PBXBuildFile; fileRef = D79976C217E74DA8000689ED /* ButtonStatusFalse.png */; };
 /* End PBXBuildFile section */
@@ -142,6 +146,12 @@
 		D74CF98B17EDAA2F008C7AF1 /* TextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputView.h; sourceTree = "<group>"; };
 		D74CF98C17EDAA2F008C7AF1 /* TextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputView.m; sourceTree = "<group>"; };
 		D74CF98E17EDAAD6008C7AF1 /* TextInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextInputView.xib; sourceTree = "<group>"; };
+		D75A2EF317EF2429004A58A7 /* RightViewCellViewStytleTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewCellViewStytleTwo.h; sourceTree = "<group>"; };
+		D75A2EF417EF2429004A58A7 /* RightViewCellViewStytleTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewCellViewStytleTwo.m; sourceTree = "<group>"; };
+		D75A2EF617EF2448004A58A7 /* RightViewCellViewStytleTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightViewCellViewStytleTwo.xib; sourceTree = "<group>"; };
+		D75A2EF917EF28C4004A58A7 /* LTitleBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTitleBarView.h; sourceTree = "<group>"; };
+		D75A2EFA17EF28C4004A58A7 /* LTitleBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTitleBarView.m; sourceTree = "<group>"; };
+		D75A2EFC17EF28D6004A58A7 /* LTitleBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTitleBarView.xib; sourceTree = "<group>"; };
 		D79976C117E74DA8000689ED /* ButtonStatusTrue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonStatusTrue.png; sourceTree = "<group>"; };
 		D79976C217E74DA8000689ED /* ButtonStatusFalse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonStatusFalse.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -340,6 +350,7 @@
 		D730EBEE17D1B4DA0022BBD6 /* LeftView */ = {
 			isa = PBXGroup;
 			children = (
+				D75A2EF817EF289E004A58A7 /* LTitleBarView */,
 				D71819BE17DC52BE00DE3F1A /* FootBarView */,
 				D71819B017DC3C5400DE3F1A /* LefeViewCellView */,
 				D730EBF017D1BD490022BBD6 /* LeftViewController.h */,
@@ -352,6 +363,7 @@
 		D730EBEF17D1BD290022BBD6 /* RightView */ = {
 			isa = PBXGroup;
 			children = (
+				D75A2EF217EF23DA004A58A7 /* RightViewCellViewStytleTwo */,
 				D740B07117EC3F020031CD97 /* RightViewCellView */,
 				D730EBF517D1BD590022BBD6 /* RightViewController.h */,
 				D730EBF617D1BD590022BBD6 /* RightViewController.m */,
@@ -387,6 +399,26 @@
 				D74CF98E17EDAAD6008C7AF1 /* TextInputView.xib */,
 			);
 			name = TextInputView;
+			sourceTree = "<group>";
+		};
+		D75A2EF217EF23DA004A58A7 /* RightViewCellViewStytleTwo */ = {
+			isa = PBXGroup;
+			children = (
+				D75A2EF317EF2429004A58A7 /* RightViewCellViewStytleTwo.h */,
+				D75A2EF417EF2429004A58A7 /* RightViewCellViewStytleTwo.m */,
+				D75A2EF617EF2448004A58A7 /* RightViewCellViewStytleTwo.xib */,
+			);
+			name = RightViewCellViewStytleTwo;
+			sourceTree = "<group>";
+		};
+		D75A2EF817EF289E004A58A7 /* LTitleBarView */ = {
+			isa = PBXGroup;
+			children = (
+				D75A2EF917EF28C4004A58A7 /* LTitleBarView.h */,
+				D75A2EFA17EF28C4004A58A7 /* LTitleBarView.m */,
+				D75A2EFC17EF28D6004A58A7 /* LTitleBarView.xib */,
+			);
+			name = LTitleBarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +504,8 @@
 				D740B07E17EC4DEF0031CD97 /* StatusFalseNormal.png in Resources */,
 				D74CF98F17EDAAD6008C7AF1 /* TextInputView.xib in Resources */,
 				D72D1FA117EEE48C00739BDC /* CellAccessory.png in Resources */,
+				D75A2EF717EF2448004A58A7 /* RightViewCellViewStytleTwo.xib in Resources */,
+				D75A2EFD17EF28D6004A58A7 /* LTitleBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +536,8 @@
 				D71819C117DC52E700DE3F1A /* FootBarView.m in Sources */,
 				D740B07417EC3F2D0031CD97 /* RightViewCellView.m in Sources */,
 				D74CF98D17EDAA2F008C7AF1 /* TextInputView.m in Sources */,
+				D75A2EF517EF2429004A58A7 /* RightViewCellViewStytleTwo.m in Sources */,
+				D75A2EFB17EF28C4004A58A7 /* LTitleBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "LeftViewController.h"
 #import "LeftViewCellView.h"
 #import "Utility.h"
+#import "LTitleBarView.h"
 
 @interface LeftViewController ()<createAlarmDelegate,actionLeftViewCellDelegate>
 
@@ -113,17 +114,34 @@
         titleBarRect.size.height = 50;
     }
     
+    CGRect separatorLineOne;
+    {
+        separatorLineOne.origin.x = 0;
+        separatorLineOne.origin.y = 50;
+        separatorLineOne.size.width = 320;
+        separatorLineOne.size.height =1;
+        
+    }
+    
     CGRect tableViewRect;
     {
         tableViewRect.origin.x = 0;
-        tableViewRect.origin.y = 50;
+        tableViewRect.origin.y = 51;
         tableViewRect.size.width = 320;
         tableViewRect.size.height = 356;
     }
     
 
-    _titleBar = [[UIView alloc] initWithFrame:titleBarRect];
-    [_titleBar setBackgroundColor:[UIColor colorWithRed:9.0 green:9.0 blue:9.0 alpha:0.5 ]];
+    
+    NSArray *_nibs=[[NSBundle mainBundle] loadNibNamed:@"LTitleBarView" owner:self options:nil];
+    _titleBar = [_nibs objectAtIndex:0];
+    _titleBar.frame = titleBarRect;
+    _titleBar.titleBarLabel.text = @"Jame's Alarm";
+   [_titleBar setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
+    
+    _separatorLineOne = [[UIView alloc] initWithFrame:separatorLineOne];
+   [_separatorLineOne setBackgroundColor:[UIColor colorWithRed:0.2 green:0.24 blue:0.29 alpha:1.0]];
+    
     
     _tableView = [[UITableView alloc] initWithFrame:tableViewRect style:UITableViewStylePlain];
     _tableView.dataSource = self;
@@ -148,6 +166,7 @@
     [_footBar addGestureRecognizer:oneFingerOneTaps];
     
     [self.view addSubview:_titleBar];
+    [self.view addSubview:_separatorLineOne];
     [self.view addSubview:_tableView];
     [self.view addSubview:_footBar];
     
