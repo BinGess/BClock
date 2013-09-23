@@ -45,12 +45,11 @@
 
 - (void)initClockView
 {
-    _clockView = [[ClockView alloc] initWithFrame:CGRectMake(0, 44, 318, 320)];
-	[_clockView setClockBackgroundImage:[UIImage imageNamed:@"clockBackground"].CGImage];
-	//[_clockView setHourHandImage:[UIImage imageNamed:@"hourButton.png"].CGImage];
-	//[_clockView setMinHandImage:[UIImage imageNamed:@"minuteButton.png"].CGImage];
-	//[_clockView setSecHandImage:[UIImage imageNamed:@"secondButton.png"].CGImage];
-    //_clockView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    UIImage *image = [UIImage imageNamed:@"4.png"];
+    _clockView = [[ClockView alloc] initWithFrame:CGRectMake(0, 44, image.size.width, image.size.height)];
+    _clockView.center = CGPointMake(self.view.center.x, 180);
+   [_clockView setClockBackgroundImage:image.CGImage];
+
 	[self.view addSubview:_clockView];
 }
 

@@ -10,4 +10,9 @@
 
 @interface FootBarView : UIView
 
+
+@property (strong, nonatomic) IBOutlet UIImageView *barImage;
+@property (strong, nonatomic) IBOutlet UILabel *barLabel;
+@property (strong, nonatomic) IBOutlet UIButton *barButton;
+
 @end

@@ -97,7 +97,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120;
+    return 115;
 }
 
 # pragma mark--
@@ -120,7 +120,6 @@
         separatorLineOne.origin.y = 50;
         separatorLineOne.size.width = 320;
         separatorLineOne.size.height =1;
-        
     }
     
     CGRect tableViewRect;
@@ -129,6 +128,22 @@
         tableViewRect.origin.y = 51;
         tableViewRect.size.width = 320;
         tableViewRect.size.height = 356;
+    }
+    
+    CGRect separatorLineTwo;
+    {
+        separatorLineTwo.origin.x = 0;
+        separatorLineTwo.origin.y = 396;
+        separatorLineTwo.size.width = 320;
+        separatorLineTwo.size.height =1;
+    }
+    
+    CGRect footBarView;
+    {
+        footBarView.origin.x = 0;
+        footBarView.origin.y = 397;
+        footBarView.size.width = 320;
+        footBarView.size.height = 72;
     }
     
 
@@ -150,9 +165,12 @@
     [_tableView setSeparatorColor:[UIColor colorWithRed:0.2 green:0.24 blue:0.29 alpha:1.0]];
     
     
+    _separatorLineTwo = [[UIView alloc] initWithFrame:separatorLineTwo];
+    [_separatorLineTwo setBackgroundColor:[UIColor colorWithRed:0.2 green:0.24 blue:0.29 alpha:1.0]];
+    
     NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"FootBarView" owner:self options:nil];
     _footBar = [_nib objectAtIndex:0];
-    [_footBar setCenter:CGPointMake(160, 435)];;
+    _footBar.frame = footBarView;
     
     // 创建一个手势识别器
     UITapGestureRecognizer *oneFingerOneTaps =
@@ -168,6 +186,7 @@
     [self.view addSubview:_titleBar];
     [self.view addSubview:_separatorLineOne];
     [self.view addSubview:_tableView];
+    [self.view addSubview:_separatorLineTwo];
     [self.view addSubview:_footBar];
     
 }

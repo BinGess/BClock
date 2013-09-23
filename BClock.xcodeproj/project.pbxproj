@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D704397817EC12F900CDE008 /* icom.png in Resources */ = {isa = PBXBuildFile; fileRef = D704397717EC12F900CDE008 /* icom.png */; };
+		D7087C8817F0850A00BA78CA /* AddButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D7087C8717F0850A00BA78CA /* AddButton.png */; };
+		D7087C8A17F0885100BA78CA /* clockBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D7087C8917F0885100BA78CA /* clockBackground.png */; };
 		D718199A17DAE6E000DE3F1A /* TitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718199917DAE6E000DE3F1A /* TitleBarView.m */; };
 		D718199C17DAE70D00DE3F1A /* TitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718199B17DAE70D00DE3F1A /* TitleBarView.xib */; };
-		D71819A317DB33C700DE3F1A /* clockBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D718199D17DB33C700DE3F1A /* clockBackground.png */; };
 		D71819A417DB33C700DE3F1A /* hourButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D718199E17DB33C700DE3F1A /* hourButton.png */; };
 		D71819A517DB33C700DE3F1A /* leftTitleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D718199F17DB33C700DE3F1A /* leftTitleButton.png */; };
 		D71819A617DB33C700DE3F1A /* minuteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D71819A017DB33C700DE3F1A /* minuteButton.png */; };
@@ -71,10 +72,11 @@
 
 /* Begin PBXFileReference section */
 		D704397717EC12F900CDE008 /* icom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icom.png; sourceTree = "<group>"; };
+		D7087C8717F0850A00BA78CA /* AddButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddButton.png; sourceTree = "<group>"; };
+		D7087C8917F0885100BA78CA /* clockBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clockBackground.png; sourceTree = "<group>"; };
 		D718199817DAE6E000DE3F1A /* TitleBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBarView.h; sourceTree = "<group>"; };
 		D718199917DAE6E000DE3F1A /* TitleBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleBarView.m; sourceTree = "<group>"; };
 		D718199B17DAE70D00DE3F1A /* TitleBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleBarView.xib; sourceTree = "<group>"; };
-		D718199D17DB33C700DE3F1A /* clockBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clockBackground.png; sourceTree = "<group>"; };
 		D718199E17DB33C700DE3F1A /* hourButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourButton.png; sourceTree = "<group>"; };
 		D718199F17DB33C700DE3F1A /* leftTitleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftTitleButton.png; sourceTree = "<group>"; };
 		D71819A017DB33C700DE3F1A /* minuteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minuteButton.png; sourceTree = "<group>"; };
@@ -324,6 +326,8 @@
 		D730EBE317D1B4A50022BBD6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D7087C8917F0885100BA78CA /* clockBackground.png */,
+				D7087C8717F0850A00BA78CA /* AddButton.png */,
 				D72D1FA017EEE48C00739BDC /* CellAccessory.png */,
 				D740B07717EC4DEF0031CD97 /* StatusTrueNormal.png */,
 				D740B07817EC4DEF0031CD97 /* StatusFalseDisable.png */,
@@ -332,7 +336,6 @@
 				D704397717EC12F900CDE008 /* icom.png */,
 				D79976C117E74DA8000689ED /* ButtonStatusTrue.png */,
 				D79976C217E74DA8000689ED /* ButtonStatusFalse.png */,
-				D718199D17DB33C700DE3F1A /* clockBackground.png */,
 				D718199E17DB33C700DE3F1A /* hourButton.png */,
 				D718199F17DB33C700DE3F1A /* leftTitleButton.png */,
 				D71819A017DB33C700DE3F1A /* minuteButton.png */,
@@ -485,7 +488,6 @@
 				D730EBF417D1BD490022BBD6 /* LeftViewController.xib in Resources */,
 				D730EBF917D1BD590022BBD6 /* RightViewController.xib in Resources */,
 				D718199C17DAE70D00DE3F1A /* TitleBarView.xib in Resources */,
-				D71819A317DB33C700DE3F1A /* clockBackground.png in Resources */,
 				D71819A417DB33C700DE3F1A /* hourButton.png in Resources */,
 				D71819A517DB33C700DE3F1A /* leftTitleButton.png in Resources */,
 				D71819A617DB33C700DE3F1A /* minuteButton.png in Resources */,
@@ -506,6 +508,8 @@
 				D72D1FA117EEE48C00739BDC /* CellAccessory.png in Resources */,
 				D75A2EF717EF2448004A58A7 /* RightViewCellViewStytleTwo.xib in Resources */,
 				D75A2EFD17EF28D6004A58A7 /* LTitleBarView.xib in Resources */,
+				D7087C8817F0850A00BA78CA /* AddButton.png in Resources */,
+				D7087C8A17F0885100BA78CA /* clockBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
