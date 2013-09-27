@@ -40,5 +40,28 @@
 }
 
 
++ (NSString *)ChangeDateToString:(NSDate *)date
+{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat : @"yyyy年M月d日 H点m分"];
+    
+    NSString * stirng = [formatter stringFromDate:date];
+    
+    return stirng;
+}
+
++ (NSDate *)ChangeStringToDate:(NSString*)string
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+    
+    [formatter setTimeZone:timeZone];
+    [formatter setDateFormat : @"M/d/yyyy h:m a"];
+    
+    NSDate *dateTime = [formatter dateFromString:string];
+    return dateTime;
+}
 
 @end

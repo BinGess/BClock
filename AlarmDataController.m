@@ -9,12 +9,14 @@
 #import "LeftViewController.h"
 #import "RightViewController.h"
 #import "CenterClockViewController.h"
+#import "AlarmDataBase.h"
 
 static AlarmDataController * sharedInstance = nil;
 
 @implementation AlarmDataController
 @synthesize alarmList = _alarmList;
 @synthesize mmDrawerController = _mmDrawerController;
+@synthesize alarmDataBase = _alarmDataBase;
 
 - (id)init
 {
@@ -29,6 +31,10 @@ static AlarmDataController * sharedInstance = nil;
         
         
       //  [self addAlarmWithInfo:@"Alarm" Date:[NSDate date]];
+        
+        _alarmDataBase = [[AlarmDataBase alloc] init];
+       [_alarmDataBase createDataBase];
+    
         
     }
     return self;
@@ -98,6 +104,9 @@ static AlarmDataController * sharedInstance = nil;
     
     UILocalNotification * localNotification = [Utility setNotificationWith:date];
     alarm.notification  = localNotification;
+    
+    
+    //_alarmDataBase insert:alarm.info ParaTwo:[NSDa] ParaThree:<#(NSString *)#>
     
     if(alarm)
     {

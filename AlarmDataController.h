@@ -10,10 +10,11 @@
 #import "Alarm.h"
 #import "Utility.h"
 #import "MMDrawerController.h"
+#import "AlarmDataBase.h"
 
 @interface AlarmDataController : NSObject
 
-
+@property (strong, nonatomic) AlarmDataBase * alarmDataBase;
 @property (strong, nonatomic) NSMutableArray * alarmList;
 @property (strong, nonatomic) MMDrawerController * mmDrawerController;
 

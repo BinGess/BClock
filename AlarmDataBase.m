@@ -10,10 +10,10 @@
 
 
 #define DBNAME    @"alarm.db"
-#define NAME      @"name"
-#define AGE       @"age"
-#define ADDRESS   @"address"
-#define TABLENAME @"PERSONINFO"
+#define INFO      @"info"
+#define DATE      @"date"
+#define AVAIL     @"avail"
+#define TABLENAME @"alarm"
 
 @implementation AlarmDataBase
 
@@ -29,9 +29,11 @@
         return;
     }
     
-    NSString * sqlString = @"create table user (name text,gender text,age integer)";
+    NSString * sqlString = @"CREATE TABLE alarm (id INTEGER PRIMARY KEY,info TEXT,date TEXT, avail INTEGER)";
     //创建表（FMDB中只有update和query操作，出了查询其他都是update操作）
     [database executeUpdate:sqlString];
+    
+    [database close];
 
 }
 
@@ -45,7 +47,7 @@
         return;
     }
     //插入数据
-    BOOL insert = [database executeUpdate:@"insert into user values (?,?,?)",paraOne,paratwo,parathree];
+    BOOL insert = [database executeUpdate:@"insert into alarm values (?,?,?)",paraOne,paratwo,parathree];
     
     if(!insert)
     {
@@ -66,15 +68,15 @@
         return;
     }
     
-    BOOL delete = [database executeUpdate:@"delete from user where name = ?",para];
-    if (delete) {
-
-        
+    BOOL delete = [database executeUpdate:@"delete from alarm where id = ?",para];
+    if (delete)
+    {
+         NSLog(@"Delete failed");
     }
     [database close];
 }
 
-- (void)query:(NSString *) para
+- (void)query:(NSString *) para Attribute:(NSString *)attribute
 {
     docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     dbPath = [docPath stringByAppendingPathComponent:DBNAME];
@@ -85,12 +87,14 @@
         return;
     }
     
-    FMResultSet *resultSet = [database executeQuery:@"select * from user where name = ?",para];
+    FMResultSet *resultSet = [database executeQuery:@"select * from alarm where ? = ?",attribute,para];
     while ([resultSet next]) {
-        NSString *name = [resultSet stringForColumn:@"name"];
-        NSString *gender = [resultSet stringForColumn:@"gender"];
-        int age = [resultSet intForColumn:@"age"];
-        NSLog(@"Name:%@,Gender:%@,Age:%d",name,gender,age);
+        
+        NSString *info = [resultSet stringForColumn:@"info"];
+        NSString *date = [resultSet stringForColumn:@"date"];
+        int avail = [resultSet intForColumn:@"avail"];
+        
+        NSLog(@"Name:%@,Gender:%@,Age:%d",info,date,avail);
     }
     [database close];
 
@@ -108,17 +112,19 @@
     }
     
     //不需要像Android中那样关闭Cursor关闭FMResultSet，因为相关的数据库关闭时，FMResultSet也会被自动关闭
-    FMResultSet *resultSet = [database executeQuery:@"select * from user"];
+    FMResultSet *resultSet = [database executeQuery:@"select * from alarm"];
     while ([resultSet next]) {
-        NSString *name = [resultSet stringForColumn:@"name"];
-        NSString *gender = [resultSet stringForColumn:@"gender"];
-        int age = [resultSet intForColumn:@"age"];
-        NSLog(@"Name:%@,Gender:%@,Age:%d",name,gender,age);
+        
+        NSString *info = [resultSet stringForColumn:@"info"];
+        NSString *date = [resultSet stringForColumn:@"date"];
+        int avail = [resultSet intForColumn:@"avail"];
+
+        NSLog(@"Name:%@,Gender:%@,Age:%d",info,date,avail);
     }
     [database close];
 }
 
-- (void)update
+- (void)updateDate
 {
 
     docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -129,14 +135,12 @@
     if (![database open]) {
         return;
     }
-    
     //参数必须是NSObject的子类，int,double,bool这种基本类型，需要封装成对应的包装类才可以
-    BOOL update = [database executeUpdate:@"update user set name = ? where age = ?",@"RyanTang",[NSNumber numberWithInt:24]];
-    
-    if(update){
-        
+    BOOL update = [database executeUpdate:@"update alarm set name = ? where age = ?",@"RyanTang",[NSNumber numberWithInt:24]];
+    if(update)
+    {
+        NSLog(@"Update failed");
     }
-    
     [database close];
 
 }

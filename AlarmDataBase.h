@@ -16,8 +16,15 @@
     NSString * dbPath;
     
     FMDatabase * database;
-
-
 }
+
+- (void)createDataBase;
+- (void)insert:(NSString *)paraOne ParaTwo:(NSString *)paratwo ParaThree:(NSString *)parathree;
+- (void)delete:(NSString *) para;
+- (void)query:(NSString *) para Attribute:(NSString *)attribute;
+- (void)queryAll;
+
+
+
 
 @end
