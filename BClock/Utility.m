@@ -45,7 +45,7 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
-    [formatter setDateFormat : @"yyyy年M月d日 H点m分"];
+    [formatter setDateFormat : @"M/d/yyyy h:m:s"];
     
     NSString * stirng = [formatter stringFromDate:date];
     
@@ -58,7 +58,7 @@
     NSTimeZone *timeZone = [NSTimeZone localTimeZone];
     
     [formatter setTimeZone:timeZone];
-    [formatter setDateFormat : @"M/d/yyyy h:m a"];
+    [formatter setDateFormat : @"M/d/yyyy h:m:s"];
     
     NSDate *dateTime = [formatter dateFromString:string];
     return dateTime;

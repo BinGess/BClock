@@ -33,8 +33,7 @@
     
         [timer fire];
     
-        [_hourLabel setText:[NSString stringWithFormat:@"%d",[component hour]]];
-        [_minLabel setText:[NSString stringWithFormat:@"%d",[component minute]]];
+       
         
 
 }
@@ -52,13 +51,17 @@
         tempDate = [NSDate date];
     }
 
-    
-    
     NSCalendar *cal = [NSCalendar currentCalendar];//定义一个NSCalendar对象
     NSDate *today = [NSDate date];//得到当前时间
     //用来得到具体的时差
     unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     component = [cal components:unitFlags fromDate:today toDate:tempDate options:0];
+    
+    [_hourLabel setText:[NSString stringWithFormat:@"%d",[component hour]]];
+    [_minLabel setText:[NSString stringWithFormat:@"%d",[component minute]]];
+    
+    NSLog(@"%d",[component hour]);
+    NSLog(@"%d",[component minute]);
 
 }
 

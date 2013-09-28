@@ -19,7 +19,7 @@
 }
 
 - (void)createDataBase;
-- (void)insert:(NSString *)paraOne ParaTwo:(NSString *)paratwo ParaThree:(NSString *)parathree;
+- (void)insert:(NSInteger)id Info:(NSString *)info Date:(NSString *)date Avail:(BOOL)avail;
 - (void)delete:(NSString *) para;
 - (void)query:(NSString *) para Attribute:(NSString *)attribute;
 - (void)queryAll;

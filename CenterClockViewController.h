@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ClockView.h"
 #import "AlarmDataController.h"
-#import "LastestAlarmTimer.h"
 #import "Alarm.h"
 
 @interface CenterClockViewController : UIViewController

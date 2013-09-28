@@ -17,4 +17,8 @@
 
 + (void)removeNotification:(UILocalNotification *) notificaiton;
 
++ (NSDate *)ChangeStringToDate:(NSString*)string;
+
++ (NSString *)ChangeDateToString:(NSDate *)date;
+
 @end

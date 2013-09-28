@@ -29,7 +29,7 @@
         return;
     }
     
-    NSString * sqlString = @"CREATE TABLE alarm (id INTEGER PRIMARY KEY,info TEXT,date TEXT, avail INTEGER)";
+    NSString * sqlString = @"CREATE TABLE alarm (id INTEGER PRIMARY KEY DEFAULT NULL,info TEXT,date TEXT, avail BOOL)";
     //创建表（FMDB中只有update和query操作，出了查询其他都是update操作）
     [database executeUpdate:sqlString];
     
@@ -37,7 +37,7 @@
 
 }
 
-- (void)insert:(NSString *)paraOne ParaTwo:(NSString *)paratwo ParaThree:(NSString *)parathree
+- (void)insert:(NSInteger)id Info:(NSString *)info Date:(NSString *)date Avail:(BOOL)avail
 {
     docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     dbPath = [docPath stringByAppendingPathComponent:DBNAME];
@@ -47,7 +47,8 @@
         return;
     }
     //插入数据
-    BOOL insert = [database executeUpdate:@"insert into alarm values (?,?,?)",paraOne,paratwo,parathree];
+    BOOL insert = [database executeUpdate:@"insert into alarm values (?,?,?,?)",[NSNumber numberWithInt:id],info
+                   ,date,[NSNumber numberWithBool:avail]];
     
     if(!insert)
     {

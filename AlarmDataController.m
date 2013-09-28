@@ -107,6 +107,7 @@ static AlarmDataController * sharedInstance = nil;
     
     
     //_alarmDataBase insert:alarm.info ParaTwo:[NSDa] ParaThree:<#(NSString *)#>
+    [_alarmDataBase insert:1 Info:alarm.info Date:[Utility ChangeDateToString:alarm.date] Avail:alarm.availability];
     
     if(alarm)
     {
