@@ -14,6 +14,8 @@
 
 @implementation CenterClockViewController
 @synthesize clockView = _clockView;
+@synthesize hourLabel = _hourLabel;
+@synthesize minLabel = _minLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,11 +28,40 @@
 
 - (void)initMainView
 {
-    UIColor * color = [UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0];
-    [self.view setBackgroundColor:color];
-
+        
+        NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setTimer:) userInfo:nil repeats:YES];
+    
+        [timer fire];
+    
+        [_hourLabel setText:[NSString stringWithFormat:@"%d",[component hour]]];
+        [_minLabel setText:[NSString stringWithFormat:@"%d",[component minute]]];
+        
 
 }
+- (void)setTimer:(NSTimer *)timer
+{
+    
+    NSDate * tempDate;
+    _alrmDataController = [AlarmDataController sharedInstanceMethod];
+    if([_alrmDataController.alarmList count] != 0)
+    {
+        Alarm * alarm = [_alrmDataController.alarmList objectAtIndex:0];
+        tempDate = alarm.date;
+    }else
+    {
+        tempDate = [NSDate date];
+    }
+
+    
+    
+    NSCalendar *cal = [NSCalendar currentCalendar];//定义一个NSCalendar对象
+    NSDate *today = [NSDate date];//得到当前时间
+    //用来得到具体的时差
+    unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    component = [cal components:unitFlags fromDate:today toDate:tempDate options:0];
+
+}
+
 
 - (void)initTitleBarView
 {

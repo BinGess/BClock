@@ -71,6 +71,11 @@
 		D7C0212A17F318DD005740D0 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C0212817F318DD005740D0 /* libsqlite3.0.dylib */; };
 		D7C0212B17F318DD005740D0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C0212917F318DD005740D0 /* libsqlite3.dylib */; };
 		D7C0213C17F328F5005740D0 /* AlarmDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C0213B17F328F5005740D0 /* AlarmDataBase.m */; };
+		D7C0214117F70C85005740D0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C0213117F328AC005740D0 /* FMDatabase.m */; };
+		D7C0214217F70C85005740D0 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C0213317F328AC005740D0 /* FMDatabaseAdditions.m */; };
+		D7C0214317F70C85005740D0 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C0213517F328AC005740D0 /* FMDatabasePool.m */; };
+		D7C0214417F70C85005740D0 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C0213717F328AC005740D0 /* FMDatabaseQueue.m */; };
+		D7C0214517F70C85005740D0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C0213917F328AC005740D0 /* FMResultSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -561,6 +566,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C0214117F70C85005740D0 /* FMDatabase.m in Sources */,
+				D7C0214217F70C85005740D0 /* FMDatabaseAdditions.m in Sources */,
+				D7C0214317F70C85005740D0 /* FMDatabasePool.m in Sources */,
+				D7C0214417F70C85005740D0 /* FMDatabaseQueue.m in Sources */,
+				D7C0214517F70C85005740D0 /* FMResultSet.m in Sources */,
 				D74CF98917EDA907008C7AF1 /* DWTagList.m in Sources */,
 				D71819C417DC575700DE3F1A /* CreateAlarmViewController.m in Sources */,
 				D71819B717DC426600DE3F1A /* Alarm.m in Sources */,

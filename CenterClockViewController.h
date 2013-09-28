@@ -8,9 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "ClockView.h"
+#import "AlarmDataController.h"
+#import "LastestAlarmTimer.h"
+#import "Alarm.h"
 
 @interface CenterClockViewController : UIViewController
+{
+    AlarmDataController * _alrmDataController;
+    NSDateComponents *component;
+
+
+}
 
 @property (nonatomic, retain) ClockView *clockView;
+
+@property (strong, nonatomic) IBOutlet UILabel *hourLabel;
+@property (strong, nonatomic) IBOutlet UILabel *minLabel;
+
 
 @end
