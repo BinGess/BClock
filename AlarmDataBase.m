@@ -7,6 +7,8 @@
 //
 
 #import "AlarmDataBase.h"
+#import "Alarm.h"
+#import "Utility.h"
 
 
 #define DBNAME    @"alarm.db"
@@ -29,7 +31,7 @@
         return;
     }
     
-    NSString * sqlString = @"CREATE TABLE alarm (id INTEGER PRIMARY KEY DEFAULT NULL,info TEXT,date TEXT, avail BOOL)";
+    NSString * sqlString = @"CREATE TABLE alarm (date TEXT PRIMARY KEY, info TEXT,avail BOOL)";
     //创建表（FMDB中只有update和query操作，出了查询其他都是update操作）
     [database executeUpdate:sqlString];
     
@@ -37,7 +39,7 @@
 
 }
 
-- (void)insert:(NSInteger)id Info:(NSString *)info Date:(NSString *)date Avail:(BOOL)avail
+- (void)insertDate:(NSString *)date Info:(NSString *)info  Avail:(BOOL)avail
 {
     docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     dbPath = [docPath stringByAppendingPathComponent:DBNAME];
@@ -47,8 +49,8 @@
         return;
     }
     //插入数据
-    BOOL insert = [database executeUpdate:@"insert into alarm values (?,?,?,?)",[NSNumber numberWithInt:id],info
-                   ,date,[NSNumber numberWithBool:avail]];
+    BOOL insert = [database executeUpdate:@"insert into alarm values (?,?,?)",date,info
+                   ,[NSNumber numberWithBool:avail]];
     
     if(!insert)
     {
@@ -69,7 +71,7 @@
         return;
     }
     
-    BOOL delete = [database executeUpdate:@"delete from alarm where id = ?",para];
+    BOOL delete = [database executeUpdate:@"delete from alarm where date = ?",para];
     if (delete)
     {
          NSLog(@"Delete failed");
@@ -101,7 +103,7 @@
 
 }
 
-- (void)queryAll
+- (NSMutableArray *)queryAll
 {
     docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     dbPath = [docPath stringByAppendingPathComponent:DBNAME];
@@ -109,20 +111,29 @@
     database = [FMDatabase databaseWithPath:dbPath];
     
     if (![database open]) {
-        return;
+        return nil;
     }
     
     //不需要像Android中那样关闭Cursor关闭FMResultSet，因为相关的数据库关闭时，FMResultSet也会被自动关闭
     FMResultSet *resultSet = [database executeQuery:@"select * from alarm"];
+    
+    NSMutableArray * array  = [[NSMutableArray alloc] init];
+    
     while ([resultSet next]) {
         
         NSString *info = [resultSet stringForColumn:@"info"];
         NSString *date = [resultSet stringForColumn:@"date"];
-        int avail = [resultSet intForColumn:@"avail"];
+        BOOL avail = [resultSet boolForColumn:@"avail"];
 
-        NSLog(@"Name:%@,Gender:%@,Age:%d",info,date,avail);
+        Alarm * alarm = [[Alarm alloc]initAlarm:info Date:[Utility ChangeStringToDate:date] Availability:avail];
+        
+        [array addObject:alarm];
+        
     }
+    
     [database close];
+    return  array;
+  
 }
 
 - (void)updateDate

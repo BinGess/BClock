@@ -19,10 +19,11 @@
 }
 
 - (void)createDataBase;
-- (void)insert:(NSInteger)id Info:(NSString *)info Date:(NSString *)date Avail:(BOOL)avail;
+- (void)insertDate:(NSString *)date Info:(NSString *)info  Avail:(BOOL)avail;
 - (void)delete:(NSString *) para;
 - (void)query:(NSString *) para Attribute:(NSString *)attribute;
-- (void)queryAll;
+
+- (NSMutableArray *)queryAll;
 
 
 

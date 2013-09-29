@@ -24,16 +24,12 @@ static AlarmDataController * sharedInstance = nil;
     if(self)
     {
         _alarmList = [[NSMutableArray alloc] init];
-        
-       // [self GetMMDrawerController];
-        
-       //[_alarmList addObject:[[Alarm alloc] initAlarm:@"Alarm" Date:[NSDate date]]];
-        
-        
-      //  [self addAlarmWithInfo:@"Alarm" Date:[NSDate date]];
-        
         _alarmDataBase = [[AlarmDataBase alloc] init];
-       [_alarmDataBase createDataBase];
+        
+        [_alarmDataBase createDataBase];
+        [self getALarmListFromDataBase];
+
+     
     
         
     }
@@ -105,14 +101,23 @@ static AlarmDataController * sharedInstance = nil;
     UILocalNotification * localNotification = [Utility setNotificationWith:date];
     alarm.notification  = localNotification;
     
-    
-    //_alarmDataBase insert:alarm.info ParaTwo:[NSDa] ParaThree:<#(NSString *)#>
-    [_alarmDataBase insert:1 Info:alarm.info Date:[Utility ChangeDateToString:alarm.date] Avail:alarm.availability];
+    [_alarmDataBase insertDate:[Utility ChangeDateToString:alarm.date] Info:alarm.info Avail:alarm.availability];
     
     if(alarm)
     {
         [_alarmList addObject:alarm];
     }
+}
+
+- (void)getALarmListFromDataBase
+{
+   
+    NSMutableArray * result = [_alarmDataBase queryAll];
+    for(Alarm *alarm in result)
+    {
+        [_alarmList addObject:alarm];
+    }
+
 }
 
 // cancel alarm and remove the localNotificaiton for a Alarm
