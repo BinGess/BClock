@@ -27,6 +27,8 @@
 		D71819C317DC52F900DE3F1A /* FootBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71819C217DC52F900DE3F1A /* FootBarView.xib */; };
 		D71819C417DC575700DE3F1A /* CreateAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819BB17DC51D200DE3F1A /* CreateAlarmViewController.m */; };
 		D72D1FA117EEE48C00739BDC /* CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = D72D1FA017EEE48C00739BDC /* CellAccessory.png */; };
+		D72F551F180159BC005FF6C9 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D72F551C18015993005FF6C9 /* SVSegmentedControl.m */; };
+		D72F5520180159BC005FF6C9 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = D72F551E18015993005FF6C9 /* SVSegmentedThumb.m */; };
 		D730EBAF17D1B17D0022BBD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBAE17D1B17D0022BBD6 /* UIKit.framework */; };
 		D730EBB117D1B17D0022BBD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBB017D1B17D0022BBD6 /* Foundation.framework */; };
 		D730EBB317D1B17D0022BBD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBB217D1B17D0022BBD6 /* CoreGraphics.framework */; };
@@ -106,6 +108,10 @@
 		D71819C017DC52E700DE3F1A /* FootBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootBarView.m; sourceTree = "<group>"; };
 		D71819C217DC52F900DE3F1A /* FootBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootBarView.xib; sourceTree = "<group>"; };
 		D72D1FA017EEE48C00739BDC /* CellAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CellAccessory.png; sourceTree = "<group>"; };
+		D72F551B18015993005FF6C9 /* SVSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
+		D72F551C18015993005FF6C9 /* SVSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
+		D72F551D18015993005FF6C9 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
+		D72F551E18015993005FF6C9 /* SVSegmentedThumb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedThumb.m; sourceTree = "<group>"; };
 		D730EBAB17D1B17D0022BBD6 /* BClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D730EBAE17D1B17D0022BBD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D730EBB017D1B17D0022BBD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -253,6 +259,17 @@
 			name = FootBarView;
 			sourceTree = "<group>";
 		};
+		D72F551A18015982005FF6C9 /* SVSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				D72F551B18015993005FF6C9 /* SVSegmentedControl.h */,
+				D72F551C18015993005FF6C9 /* SVSegmentedControl.m */,
+				D72F551D18015993005FF6C9 /* SVSegmentedThumb.h */,
+				D72F551E18015993005FF6C9 /* SVSegmentedThumb.m */,
+			);
+			name = SVSegmentedControl;
+			sourceTree = "<group>";
+		};
 		D730EBA217D1B17D0022BBD6 = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +412,7 @@
 		D730EBEF17D1BD290022BBD6 /* RightView */ = {
 			isa = PBXGroup;
 			children = (
+				D72F551A18015982005FF6C9 /* SVSegmentedControl */,
 				D75A2EF217EF23DA004A58A7 /* RightViewCellViewStytleTwo */,
 				D740B07117EC3F020031CD97 /* RightViewCellView */,
 				D730EBF517D1BD590022BBD6 /* RightViewController.h */,
@@ -566,6 +584,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D72F551F180159BC005FF6C9 /* SVSegmentedControl.m in Sources */,
+				D72F5520180159BC005FF6C9 /* SVSegmentedThumb.m in Sources */,
 				D7C0214117F70C85005740D0 /* FMDatabase.m in Sources */,
 				D7C0214217F70C85005740D0 /* FMDatabaseAdditions.m in Sources */,
 				D7C0214317F70C85005740D0 /* FMDatabasePool.m in Sources */,

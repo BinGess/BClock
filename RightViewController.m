@@ -64,10 +64,28 @@ static const int rowCount = 4;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
-    
-    [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
-    [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
+        UIImage * trues = [UIImage imageNamed:@"StatusTrueNormal.png"];
+        UIImage * falses = [UIImage imageNamed:@"StatusFalseNormal.png"];
+        
+        CGRect segmentRect;
+        {
+            segmentRect.origin.x = 140 ;
+            segmentRect.origin.y = 10 ;
+            segmentRect.size.width = trues.size.width + falses.size.width ;
+            segmentRect.size.height = trues.size.height;
+        }
+        
+        SVSegmentedControl *redSC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:trues, falses, nil]];
+        [redSC addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+        
+        redSC.tag = 0;
+        redSC.crossFadeLabelsOnDrag = YES;
+        redSC.thumb.tintColor = [UIColor colorWithRed:0.6 green:0.2 blue:0.2 alpha:1];
+        redSC.selectedIndex = 1;
+        redSC.frame = segmentRect;
+        
+        [cell addSubview:redSC];
+
     cell.TextLabel.text = @"Alarm";
 
     return cell;
@@ -85,9 +103,28 @@ static const int rowCount = 4;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
-        [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
-        [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
-        [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
+        UIImage * trues = [UIImage imageNamed:@"StatusTrueNormal.png"];
+        UIImage * falses = [UIImage imageNamed:@"StatusFalseNormal.png"];
+        
+        CGRect segmentRect;
+        {
+            segmentRect.origin.x = 140 ;
+            segmentRect.origin.y = 10 ;
+            segmentRect.size.width = trues.size.width + falses.size.width ;
+            segmentRect.size.height = trues.size.height;
+        }
+        
+        SVSegmentedControl *redSC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:trues, falses, nil]];
+        [redSC addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+        
+        redSC.tag = 1;
+        redSC.crossFadeLabelsOnDrag = YES;
+        redSC.thumb.tintColor = [UIColor colorWithRed:0.6 green:0.2 blue:0.2 alpha:1];
+        redSC.selectedIndex = 1;
+        redSC.frame = segmentRect;
+        
+        [cell addSubview:redSC];
+
         cell.TextLabel.text = @"Snooze";
         return cell;
   
@@ -106,9 +143,28 @@ static const int rowCount = 4;
         
         [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
         
-        [cell.StatusTrueButton setBackgroundImage:[UIImage imageNamed:@"StatusTrueNormal.png"] forState:UIControlStateNormal];
-        [cell.StatusFalseButton setBackgroundImage:[UIImage imageNamed:@"StatusFalseNormal"] forState:UIControlStateNormal];
-        cell.TextLabel.text = @"Vibration";
+        UIImage * trues = [UIImage imageNamed:@"StatusTrueNormal.png"];
+        UIImage * falses = [UIImage imageNamed:@"StatusFalseNormal.png"];
+        
+        CGRect segmentRect;
+        {
+            segmentRect.origin.x = 140 ;
+            segmentRect.origin.y = 10 ;
+            segmentRect.size.width = trues.size.width + falses.size.width ;
+            segmentRect.size.height = trues.size.height;
+        }
+        
+        SVSegmentedControl *redSC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:trues, falses, nil]];
+        [redSC addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+        
+        redSC.tag = 2;
+        redSC.crossFadeLabelsOnDrag = YES;
+        redSC.thumb.tintColor = [UIColor colorWithRed:0.6 green:0.2 blue:0.2 alpha:1];
+        redSC.selectedIndex = 0;
+        redSC.frame = segmentRect;
+        
+        [cell addSubview:redSC];
+
         
         return cell;
         
@@ -132,9 +188,7 @@ static const int rowCount = 4;
         cell.cellLabel.text = @"Help & FAQ";
         
         return cell;
-
-            
-    
+  
     }
 
  
@@ -199,7 +253,11 @@ static const int rowCount = 4;
     [super viewDidLoad];
     [self initView];
     [self initData];
-    
+}
+
+- (void)segmentedControlChangedValue:(SVSegmentedControl*)segmentedControl
+{
+	NSLog(@"segmentedControl %i did select index %i (via UIControl method)", segmentedControl.tag, segmentedControl.selectedIndex);
 }
 
 - (void)didReceiveMemoryWarning

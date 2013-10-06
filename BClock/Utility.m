@@ -24,19 +24,24 @@
     UILocalNotification * notification = [[UILocalNotification alloc] init];
     notification.fireDate = date;
     notification.repeatInterval = NSDayCalendarUnit;
-    notification.timeZone = nil;
+    notification.timeZone = [NSTimeZone defaultTimeZone];
     notification.alertBody = @"起床啦";
     notification.alertAction = @"关闭";
     notification.soundName = UILocalNotificationDefaultSoundName;
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    
     return notification;
 }
 
 + (void)removeNotification:(UILocalNotification *) notificaiton
 {
     [[UIApplication sharedApplication] cancelLocalNotification:notificaiton];
+}
+
+
++ (void)removeAllNotification
+{
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 

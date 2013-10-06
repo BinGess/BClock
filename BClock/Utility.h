@@ -21,4 +21,6 @@
 
 + (NSString *)ChangeDateToString:(NSDate *)date;
 
++ (void)removeAllNotification;
+
 @end

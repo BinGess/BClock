@@ -29,14 +29,10 @@
 - (void)initMainView
 {
         
-        NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setTimer:) userInfo:nil repeats:YES];
-    
-        [timer fire];
-    
-       
-        
-
+    NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setTimer:) userInfo:nil repeats:YES];
+    [timer fire];
 }
+
 - (void)setTimer:(NSTimer *)timer
 {
     
@@ -59,10 +55,6 @@
     
     [_hourLabel setText:[NSString stringWithFormat:@"%d",[component hour]]];
     [_minLabel setText:[NSString stringWithFormat:@"%d",[component minute]]];
-    
-    NSLog(@"%d",[component hour]);
-    NSLog(@"%d",[component minute]);
-
 }
 
 
@@ -74,14 +66,14 @@
     //设置自定义视图的位置
     [tmpCustomView setCenter:CGPointMake(160,22)];
     //添加视图
-    [self.view addSubview:tmpCustomView];
+    //[self.view addSubview:tmpCustomView];
 }
 
 - (void)initClockView
 {
     UIImage *image = [UIImage imageNamed:@"4.png"];
     _clockView = [[ClockView alloc] initWithFrame:CGRectMake(0, 44, image.size.width, image.size.height)];
-    _clockView.center = CGPointMake(self.view.center.x, 180);
+    _clockView.center = CGPointMake(self.view.center.x, 150);
    [_clockView setClockBackgroundImage:image.CGImage];
 
 	[self.view addSubview:_clockView];
@@ -97,7 +89,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self initMainView];
-    [self initTitleBarView];
+   // [self initTitleBarView];
     [self initClockView];
     [_clockView updateClock:nil];
     [_clockView start];

@@ -124,13 +124,19 @@
     
     CenterClockViewController * center = [[CenterClockViewController alloc] init];
     
-    UIViewController * rightDrawer = [[RightViewController alloc] init];
+    RightViewController * rightDrawer = [[RightViewController alloc] init];
     rightDrawer.view.backgroundColor = [UIColor greenColor];
     
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:center];
+    [navigationController setRestorationIdentifier:@"MMExampleCenterNavigationControllerRestorationKey"];
+    
+    
     MMDrawerController * _mmDrawerController = [[MMDrawerController alloc]
-                                                initWithCenterViewController:center
+                                                initWithCenterViewController:navigationController
                                                 leftDrawerViewController:leftDrawer
                                                 rightDrawerViewController:rightDrawer];
+    
+    [_mmDrawerController setRestorationIdentifier:@"MMDrawer"];
     
     [_mmDrawerController setMaximumRightDrawerWidth:250];
     [_mmDrawerController setMaximumLeftDrawerWidth:250];

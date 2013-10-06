@@ -12,6 +12,7 @@
 #import "RightViewController.h"
 #import "CenterClockViewController.h"
 #import "AlarmDataController.h"
+#import "MMDrawerVisualState.h"
 
 
 @implementation AppDelegate
@@ -27,13 +28,19 @@
     
     CenterClockViewController * center = [[CenterClockViewController alloc] init];
     
-    UIViewController * rightDrawer = [[RightViewController alloc] init];
+    RightViewController * rightDrawer = [[RightViewController alloc] init];
     rightDrawer.view.backgroundColor = [UIColor greenColor];
     
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:center];
+    [navigationController setRestorationIdentifier:@"MMExampleCenterNavigationControllerRestorationKey"];
+    
+    
     MMDrawerController * _mmDrawerController = [[MMDrawerController alloc]
-                           initWithCenterViewController:center
+                           initWithCenterViewController:navigationController
                            leftDrawerViewController:leftDrawer
                            rightDrawerViewController:rightDrawer];
+    
+    [_mmDrawerController setRestorationIdentifier:@"MMDrawer"];
     
     [_mmDrawerController setMaximumRightDrawerWidth:250];
     [_mmDrawerController setMaximumLeftDrawerWidth:250];
@@ -53,6 +60,9 @@
     {
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
     }
+    
+//    [Utility removeAllNotification];
+    
     
     return YES;
 
@@ -85,10 +95,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
     
     UIApplicationState state = application.applicationState;
-    //    NSLog(@"%@,%d",notification,state);
+    
     if (state == UIApplicationStateActive) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提醒"
                                                          message:notification.alertBody
