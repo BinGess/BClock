@@ -19,6 +19,8 @@
 @property (strong, nonatomic) MMDrawerController * mmDrawerController;
 
 - (void)addAlarmWithInfo:(NSString *)info Date:(NSDate *) date;
+- (void)deleteAlarmWith:(Alarm*)alarm;
+
 - (NSInteger) countOfAlarmList;
 
 

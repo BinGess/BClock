@@ -10,6 +10,17 @@
 #import "ClockView.h"
 #import "AlarmDataController.h"
 #import "Alarm.h"
+#import "MMDrawerVisualState.h"
+
+#import "MMDrawerController.h"
+
+#import "UIViewController+MMDrawerController.h"
+#import "MMDrawerBarButtonItem.h"
+
+
+
+
+#import <QuartzCore/QuartzCore.h>
 
 @interface CenterClockViewController : UIViewController
 {

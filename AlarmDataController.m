@@ -109,6 +109,14 @@ static AlarmDataController * sharedInstance = nil;
     }
 }
 
+
+- (void)deleteAlarmWith:(Alarm*)alarm;
+{
+    [Utility removeNotification:alarm.notification];
+    [_alarmDataBase delete:[Utility ChangeDateToString:alarm.date]];
+
+}
+
 - (void)getALarmListFromDataBase
 {
    

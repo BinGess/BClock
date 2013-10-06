@@ -31,6 +31,40 @@
         
     NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setTimer:) userInfo:nil repeats:YES];
     [timer fire];
+    
+    [self setupLeftMenuButton];
+    [self setupRightMenuButton];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor
+                                                           colorWithRed:32.0/255.0
+                                                           green:40.0/255.0
+                                                           blue:51.0/255.0
+                                                           alpha:1.0]];
+    
+    
+   // MMLogoView * logo = [[MMLogoView alloc] initWithFrame:CGRectMake(0, 0, 29, 31)];
+    //[self.navigationItem setTitleView:logo];
+    //[self.navigationController.view.layer setCornerRadius:10.0f];
+    
+}
+
+-(void)setupLeftMenuButton{
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
+}
+
+-(void)setupRightMenuButton{
+    MMDrawerBarButtonItem * rightDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(rightDrawerButtonPress:)];
+    [self.navigationItem setRightBarButtonItem:rightDrawerButton animated:YES];
+}
+
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
+}
+
+-(void)rightDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 }
 
 - (void)setTimer:(NSTimer *)timer
@@ -93,6 +127,7 @@
     [self initClockView];
     [_clockView updateClock:nil];
     [_clockView start];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

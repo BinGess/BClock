@@ -90,6 +90,19 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        Alarm * alarm = [_alarmDataController.alarmList objectAtIndex:indexPath.row];
+       [_alarmDataController deleteAlarmWith:alarm];
+        
+       [_alarmDataController.alarmList removeObjectAtIndex:indexPath.row];
+       [_tableView reloadData];
+    }
+
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -215,6 +228,13 @@
     [self initView];
     [self initData];
 
+}
+
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [_tableView setEditing:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
