@@ -19,6 +19,9 @@
 
 @implementation CreateAlarmViewController
 @synthesize delegate = _delegate;
+@synthesize date = _date;
+@synthesize labelString = _labelString;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,6 +66,12 @@
 
 
 #pragma mark initView
+
+- (void)initData
+{
+  
+
+}
 
 - (void)initTextInputView
 {

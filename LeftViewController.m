@@ -90,18 +90,37 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        Alarm * alarm = [_alarmDataController.alarmList objectAtIndex:indexPath.row];
-       [_alarmDataController deleteAlarmWith:alarm];
-        
-       [_alarmDataController.alarmList removeObjectAtIndex:indexPath.row];
-       [_tableView reloadData];
-    }
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if(editingStyle == UITableViewCellEditingStyleDelete)
+//    {
+//        Alarm * alarm = [_alarmDataController.alarmList objectAtIndex:indexPath.row];
+//       [_alarmDataController deleteAlarmWith:alarm];
+//        
+//       [_alarmDataController.alarmList removeObjectAtIndex:indexPath.row];
+//       [_tableView reloadData];
+//    }
+//
+//}
 
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    return YES;
+//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    CreateAlarmViewController * createController = [[CreateAlarmViewController alloc] initWithNibName:@"CreateAlarmViewController" bundle:nil];
+    Alarm * alarm = [_alarmDataController.alarmList objectAtIndex:indexPath.row];
+    
+    createController.date = alarm.date;
+    createController.labelString = alarm.info;
+    
+    [self presentViewController:createController animated:YES completion:nil];
+    
+    
 }
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -234,7 +253,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [_tableView setEditing:YES animated:YES];
+     //[_tableView setEditing:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

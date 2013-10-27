@@ -43,7 +43,7 @@
     [_mmDrawerController setRestorationIdentifier:@"MMDrawer"];
     
     [_mmDrawerController setMaximumRightDrawerWidth:250];
-    [_mmDrawerController setMaximumLeftDrawerWidth:250];
+    [_mmDrawerController setMaximumLeftDrawerWidth:260];
     
     [_mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [_mmDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];

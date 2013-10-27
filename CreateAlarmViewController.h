@@ -18,7 +18,7 @@
 @interface CreateAlarmViewController : UIViewController<DWTagListDelegate,UITextFieldDelegate>
 {
 
-    NSDate * _date;
+   // NSDate * _date;
     
     Utility * _utility;
     
@@ -28,11 +28,14 @@
     
     DWTagList * _dwtaglist;
     
-    NSString * _labelString;
+   // NSString * _labelString;
     
 }
 
 @property (strong, nonatomic) id<createAlarmDelegate> delegate;
+@property (strong, nonatomic) NSDate * date;
+@property (strong, nonatomic) NSString * labelString;
+
 
 - (IBAction)datePickerChanged:(id)sender;
 - (IBAction)backButton:(id)sender;
