@@ -105,9 +105,9 @@
 
 - (void)initClockView
 {
-    UIImage *image = [UIImage imageNamed:@"4.png"];
+    UIImage *image = [UIImage imageNamed:@"clockBackground.png"];
     _clockView = [[ClockView alloc] initWithFrame:CGRectMake(0, 44, image.size.width, image.size.height)];
-    _clockView.center = CGPointMake(self.view.center.x, 150);
+    _clockView.center = CGPointMake(self.view.center.x, 200);
    [_clockView setClockBackgroundImage:image.CGImage];
 
 	[self.view addSubview:_clockView];

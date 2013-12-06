@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4C6340A0-6E14-4442-B16D-DE3B1EFB1ACA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BClock</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>211E3E6D-7FA8-49F8-857A-D4D730497ECD</key>
+		<string>https://github.com/BinGess/BClock.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BClock.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>211E3E6D-7FA8-49F8-857A-D4D730497ECD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/BinGess/BClock.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>211E3E6D-7FA8-49F8-857A-D4D730497ECD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>211E3E6D-7FA8-49F8-857A-D4D730497ECD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BClock</string>
+		</dict>
+	</array>
+</dict>
+</plist>
