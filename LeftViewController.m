@@ -19,6 +19,14 @@
 @implementation LeftViewController
 @synthesize alarmDataController = _alarmDataController;
 
+
+- (void)removeAlarm:(NSInteger) index
+{
+
+    [_alarmDataController.alarmList removeObjectAtIndex:index];
+
+}
+
 - (void)actionLeftViewCellCheckButton:sender
 {
     // 拿到这个Alarm的行号以后，将更改这个闹钟的状态，已经更改此时的状态图片
@@ -111,10 +119,18 @@
 {
 
     CreateAlarmViewController * createController = [[CreateAlarmViewController alloc] initWithNibName:@"CreateAlarmViewController" bundle:nil];
-    Alarm * alarm = [_alarmDataController.alarmList objectAtIndex:indexPath.row];
     
-    createController.date = alarm.date;
-    createController.labelString = alarm.info;
+    
+    Alarm * alarms = [_alarmDataController.alarmList objectAtIndex:indexPath.row];
+    
+    createController.date = alarms.date;
+    createController.labelString = alarms.info;
+    createController.deleteLabel = 1;
+    createController.cellIndex = indexPath.row;
+    createController.alarm = alarms;
+    createController.delegate = self;
+    
+
     
     [self presentViewController:createController animated:YES completion:nil];
     
@@ -141,7 +157,7 @@
     CGRect titleBarRect;
     {
         titleBarRect.origin.x = 0;
-        titleBarRect.origin.y = 0;
+        titleBarRect.origin.y = 20;
         titleBarRect.size.width = 320;
         titleBarRect.size.height = 50;
     }
@@ -149,7 +165,7 @@
     CGRect separatorLineOne;
     {
         separatorLineOne.origin.x = 0;
-        separatorLineOne.origin.y = 50;
+        separatorLineOne.origin.y = 70;
         separatorLineOne.size.width = 320;
         separatorLineOne.size.height =1;
     }
@@ -157,15 +173,15 @@
     CGRect tableViewRect;
     {
         tableViewRect.origin.x = 0;
-        tableViewRect.origin.y = 51;
+        tableViewRect.origin.y = 71;
         tableViewRect.size.width = 320;
-        tableViewRect.size.height = 356;
+        tableViewRect.size.height = 424;
     }
     
     CGRect separatorLineTwo;
     {
         separatorLineTwo.origin.x = 0;
-        separatorLineTwo.origin.y = 396;
+        separatorLineTwo.origin.y = 495;
         separatorLineTwo.size.width = 320;
         separatorLineTwo.size.height =1;
     }
@@ -173,7 +189,7 @@
     CGRect footBarView;
     {
         footBarView.origin.x = 0;
-        footBarView.origin.y = 397;
+        footBarView.origin.y = 496;
         footBarView.size.width = 320;
         footBarView.size.height = 72;
     }
@@ -239,11 +255,17 @@
         // Custom initialization
     }
     return self;
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+
+    
+    
     [self initView];
     [self initData];
 

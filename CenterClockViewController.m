@@ -42,7 +42,7 @@
                                                            alpha:1.0]];
     
     
-   // MMLogoView * logo = [[MMLogoView alloc] initWithFrame:CGRectMake(0, 0, 29, 31)];
+    //MMLogoView * logo = [[MMLogoView alloc] initWithFrame:CGRectMake(0, 0, 29, 31)];
     //[self.navigationItem setTitleView:logo];
     //[self.navigationController.view.layer setCornerRadius:10.0f];
     

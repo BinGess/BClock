@@ -71,6 +71,8 @@
         return;
     }
     
+    NSLog(@"sssss%@",para);
+    
     BOOL delete = [database executeUpdate:@"delete from alarm where date = ?",para];
     if (delete)
     {

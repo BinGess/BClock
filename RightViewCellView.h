@@ -7,28 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SVSegmentedControl.h"
+
 
 @protocol actionRightViewCellDelegate;
 
 @interface RightViewCellView : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIButton *StatusTrueButton;
-@property (strong, nonatomic) IBOutlet UIButton *StatusFalseButton;
 @property (strong, nonatomic) IBOutlet UILabel *TextLabel;
-@property (strong, nonatomic) id<actionRightViewCellDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UISwitch *switchview;
 
-- (IBAction)actionTrueButton:(id)sender;
-- (IBAction)actionFalseButton:(id)sender;
 
-@end
+- (IBAction)switchAction:(id)sender;
 
-@protocol actionRightViewCellDelegate <NSObject>
-
-@required
-
--(void) actionRightViewCellTrueButton:(id)sender;
-
--(void) actionRightViewCellFalseButton:(id)sender;
 
 @end
+

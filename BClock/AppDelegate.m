@@ -24,14 +24,17 @@
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     LeftViewController * leftDrawer = [[LeftViewController alloc] init];
-    leftDrawer.view.backgroundColor = [UIColor blackColor];
+
     
     CenterClockViewController * center = [[CenterClockViewController alloc] init];
     
     RightViewController * rightDrawer = [[RightViewController alloc] init];
-    rightDrawer.view.backgroundColor = [UIColor greenColor];
+
     
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:center];
+    
+    navigationController.navigationBar.tintColor = [UIColor clearColor];
+    
     [navigationController setRestorationIdentifier:@"MMExampleCenterNavigationControllerRestorationKey"];
     
     
@@ -42,7 +45,7 @@
     
     [_mmDrawerController setRestorationIdentifier:@"MMDrawer"];
     
-    [_mmDrawerController setMaximumRightDrawerWidth:250];
+    [_mmDrawerController setMaximumRightDrawerWidth:260];
     [_mmDrawerController setMaximumLeftDrawerWidth:260];
     
     [_mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];

@@ -18,26 +18,23 @@
 @interface CreateAlarmViewController : UIViewController<DWTagListDelegate,UITextFieldDelegate>
 {
 
-   // NSDate * _date;
     
     Utility * _utility;
-    
     AlarmDataController * _alarmDataController;
-    
     TextInputView * _textInputView;
-    
     DWTagList * _dwtaglist;
-    
-   // NSString * _labelString;
+    UIDatePicker * datePicker;
     
 }
 
 @property (strong, nonatomic) id<createAlarmDelegate> delegate;
+@property (strong, nonatomic) Alarm * alarm;
 @property (strong, nonatomic) NSDate * date;
 @property (strong, nonatomic) NSString * labelString;
+@property (nonatomic) NSInteger deleteLabel;
+@property (nonatomic) NSInteger cellIndex;
 
 
-- (IBAction)datePickerChanged:(id)sender;
 - (IBAction)backButton:(id)sender;
 - (IBAction)addButton:(id)sender;
 
@@ -49,5 +46,7 @@
 @required
 
 - (void)addAlarmWithInfo:(NSString *) info Date:(NSDate *)date;
+
+- (void)removeAlarm:(NSInteger) index;
 
 @end

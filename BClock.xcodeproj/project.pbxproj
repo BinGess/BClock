@@ -10,8 +10,6 @@
 		D704397817EC12F900CDE008 /* icom.png in Resources */ = {isa = PBXBuildFile; fileRef = D704397717EC12F900CDE008 /* icom.png */; };
 		D7087C8817F0850A00BA78CA /* AddButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D7087C8717F0850A00BA78CA /* AddButton.png */; };
 		D7087C8A17F0885100BA78CA /* clockBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D7087C8917F0885100BA78CA /* clockBackground.png */; };
-		D718199A17DAE6E000DE3F1A /* TitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D718199917DAE6E000DE3F1A /* TitleBarView.m */; };
-		D718199C17DAE70D00DE3F1A /* TitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D718199B17DAE70D00DE3F1A /* TitleBarView.xib */; };
 		D71819A417DB33C700DE3F1A /* hourButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D718199E17DB33C700DE3F1A /* hourButton.png */; };
 		D71819A517DB33C700DE3F1A /* leftTitleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D718199F17DB33C700DE3F1A /* leftTitleButton.png */; };
 		D71819A617DB33C700DE3F1A /* minuteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D71819A017DB33C700DE3F1A /* minuteButton.png */; };
@@ -27,17 +25,12 @@
 		D71819C317DC52F900DE3F1A /* FootBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71819C217DC52F900DE3F1A /* FootBarView.xib */; };
 		D71819C417DC575700DE3F1A /* CreateAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71819BB17DC51D200DE3F1A /* CreateAlarmViewController.m */; };
 		D72D1FA117EEE48C00739BDC /* CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = D72D1FA017EEE48C00739BDC /* CellAccessory.png */; };
-		D72F551F180159BC005FF6C9 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D72F551C18015993005FF6C9 /* SVSegmentedControl.m */; };
-		D72F5520180159BC005FF6C9 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = D72F551E18015993005FF6C9 /* SVSegmentedThumb.m */; };
 		D730EBAF17D1B17D0022BBD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBAE17D1B17D0022BBD6 /* UIKit.framework */; };
 		D730EBB117D1B17D0022BBD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBB017D1B17D0022BBD6 /* Foundation.framework */; };
 		D730EBB317D1B17D0022BBD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D730EBB217D1B17D0022BBD6 /* CoreGraphics.framework */; };
 		D730EBB917D1B17D0022BBD6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D730EBB717D1B17D0022BBD6 /* InfoPlist.strings */; };
 		D730EBBB17D1B17D0022BBD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D730EBBA17D1B17D0022BBD6 /* main.m */; };
 		D730EBBF17D1B17D0022BBD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D730EBBE17D1B17D0022BBD6 /* AppDelegate.m */; };
-		D730EBC117D1B17D0022BBD6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D730EBC017D1B17D0022BBD6 /* Default.png */; };
-		D730EBC317D1B17D0022BBD6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D730EBC217D1B17D0022BBD6 /* Default@2x.png */; };
-		D730EBC517D1B17D0022BBD6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D730EBC417D1B17D0022BBD6 /* Default-568h@2x.png */; };
 		D730EBE117D1B3A00022BBD6 /* CenterClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D730EBDF17D1B3A00022BBD6 /* CenterClockViewController.m */; };
 		D730EBE217D1B3A00022BBD6 /* CenterClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D730EBE017D1B3A00022BBD6 /* CenterClockViewController.xib */; };
 		D730EBE917D1B4C00022BBD6 /* clock-background.png in Resources */ = {isa = PBXBuildFile; fileRef = D730EBE417D1B4C00022BBD6 /* clock-background.png */; };
@@ -84,9 +77,6 @@
 		D704397717EC12F900CDE008 /* icom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icom.png; sourceTree = "<group>"; };
 		D7087C8717F0850A00BA78CA /* AddButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddButton.png; sourceTree = "<group>"; };
 		D7087C8917F0885100BA78CA /* clockBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clockBackground.png; sourceTree = "<group>"; };
-		D718199817DAE6E000DE3F1A /* TitleBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBarView.h; sourceTree = "<group>"; };
-		D718199917DAE6E000DE3F1A /* TitleBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleBarView.m; sourceTree = "<group>"; };
-		D718199B17DAE70D00DE3F1A /* TitleBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleBarView.xib; sourceTree = "<group>"; };
 		D718199E17DB33C700DE3F1A /* hourButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourButton.png; sourceTree = "<group>"; };
 		D718199F17DB33C700DE3F1A /* leftTitleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftTitleButton.png; sourceTree = "<group>"; };
 		D71819A017DB33C700DE3F1A /* minuteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minuteButton.png; sourceTree = "<group>"; };
@@ -108,10 +98,6 @@
 		D71819C017DC52E700DE3F1A /* FootBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootBarView.m; sourceTree = "<group>"; };
 		D71819C217DC52F900DE3F1A /* FootBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootBarView.xib; sourceTree = "<group>"; };
 		D72D1FA017EEE48C00739BDC /* CellAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CellAccessory.png; sourceTree = "<group>"; };
-		D72F551B18015993005FF6C9 /* SVSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVSegmentedControl.h; sourceTree = "<group>"; };
-		D72F551C18015993005FF6C9 /* SVSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
-		D72F551D18015993005FF6C9 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
-		D72F551E18015993005FF6C9 /* SVSegmentedThumb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedThumb.m; sourceTree = "<group>"; };
 		D730EBAB17D1B17D0022BBD6 /* BClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D730EBAE17D1B17D0022BBD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D730EBB017D1B17D0022BBD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,9 +108,6 @@
 		D730EBBC17D1B17D0022BBD6 /* BClock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BClock-Prefix.pch"; sourceTree = "<group>"; };
 		D730EBBD17D1B17D0022BBD6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D730EBBE17D1B17D0022BBD6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D730EBC017D1B17D0022BBD6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D730EBC217D1B17D0022BBD6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		D730EBC417D1B17D0022BBD6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D730EBD217D1B1B70022BBD6 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
 		D730EBD317D1B1B70022BBD6 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
 		D730EBD417D1B1B70022BBD6 /* MMDrawerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
@@ -203,16 +186,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D718199717DAE6B200DE3F1A /* TitleBarView */ = {
-			isa = PBXGroup;
-			children = (
-				D718199817DAE6E000DE3F1A /* TitleBarView.h */,
-				D718199917DAE6E000DE3F1A /* TitleBarView.m */,
-				D718199B17DAE70D00DE3F1A /* TitleBarView.xib */,
-			);
-			name = TitleBarView;
-			sourceTree = "<group>";
-		};
 		D71819A917DC302100DE3F1A /* DataController */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,17 +230,6 @@
 				D71819C217DC52F900DE3F1A /* FootBarView.xib */,
 			);
 			name = FootBarView;
-			sourceTree = "<group>";
-		};
-		D72F551A18015982005FF6C9 /* SVSegmentedControl */ = {
-			isa = PBXGroup;
-			children = (
-				D72F551B18015993005FF6C9 /* SVSegmentedControl.h */,
-				D72F551C18015993005FF6C9 /* SVSegmentedControl.m */,
-				D72F551D18015993005FF6C9 /* SVSegmentedThumb.h */,
-				D72F551E18015993005FF6C9 /* SVSegmentedThumb.m */,
-			);
-			name = SVSegmentedControl;
 			sourceTree = "<group>";
 		};
 		D730EBA217D1B17D0022BBD6 = {
@@ -326,9 +288,6 @@
 				D730EBB717D1B17D0022BBD6 /* InfoPlist.strings */,
 				D730EBBA17D1B17D0022BBD6 /* main.m */,
 				D730EBBC17D1B17D0022BBD6 /* BClock-Prefix.pch */,
-				D730EBC017D1B17D0022BBD6 /* Default.png */,
-				D730EBC217D1B17D0022BBD6 /* Default@2x.png */,
-				D730EBC417D1B17D0022BBD6 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -351,7 +310,6 @@
 		D730EBDA17D1B1C50022BBD6 /* CenterView */ = {
 			isa = PBXGroup;
 			children = (
-				D718199717DAE6B200DE3F1A /* TitleBarView */,
 				D730EBDB17D1B34B0022BBD6 /* ClockView */,
 				D730EBDE17D1B3A00022BBD6 /* CenterClockViewController.h */,
 				D730EBDF17D1B3A00022BBD6 /* CenterClockViewController.m */,
@@ -412,7 +370,6 @@
 		D730EBEF17D1BD290022BBD6 /* RightView */ = {
 			isa = PBXGroup;
 			children = (
-				D72F551A18015982005FF6C9 /* SVSegmentedControl */,
 				D75A2EF217EF23DA004A58A7 /* RightViewCellViewStytleTwo */,
 				D740B07117EC3F020031CD97 /* RightViewCellView */,
 				D730EBF517D1BD590022BBD6 /* RightViewController.h */,
@@ -540,9 +497,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D730EBB917D1B17D0022BBD6 /* InfoPlist.strings in Resources */,
-				D730EBC117D1B17D0022BBD6 /* Default.png in Resources */,
-				D730EBC317D1B17D0022BBD6 /* Default@2x.png in Resources */,
-				D730EBC517D1B17D0022BBD6 /* Default-568h@2x.png in Resources */,
 				D730EBE217D1B3A00022BBD6 /* CenterClockViewController.xib in Resources */,
 				D730EBE917D1B4C00022BBD6 /* clock-background.png in Resources */,
 				D730EBEA17D1B4C00022BBD6 /* clock-hour-background.png in Resources */,
@@ -551,7 +505,6 @@
 				D730EBED17D1B4C00022BBD6 /* clock-sec-background.png in Resources */,
 				D730EBF417D1BD490022BBD6 /* LeftViewController.xib in Resources */,
 				D730EBF917D1BD590022BBD6 /* RightViewController.xib in Resources */,
-				D718199C17DAE70D00DE3F1A /* TitleBarView.xib in Resources */,
 				D71819A417DB33C700DE3F1A /* hourButton.png in Resources */,
 				D71819A517DB33C700DE3F1A /* leftTitleButton.png in Resources */,
 				D71819A617DB33C700DE3F1A /* minuteButton.png in Resources */,
@@ -584,8 +537,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D72F551F180159BC005FF6C9 /* SVSegmentedControl.m in Sources */,
-				D72F5520180159BC005FF6C9 /* SVSegmentedThumb.m in Sources */,
 				D7C0214117F70C85005740D0 /* FMDatabase.m in Sources */,
 				D7C0214217F70C85005740D0 /* FMDatabaseAdditions.m in Sources */,
 				D7C0214317F70C85005740D0 /* FMDatabasePool.m in Sources */,
@@ -606,7 +557,6 @@
 				D730EBE117D1B3A00022BBD6 /* CenterClockViewController.m in Sources */,
 				D730EBF317D1BD490022BBD6 /* LeftViewController.m in Sources */,
 				D730EBF817D1BD590022BBD6 /* RightViewController.m in Sources */,
-				D718199A17DAE6E000DE3F1A /* TitleBarView.m in Sources */,
 				D71819B317DC3D7F00DE3F1A /* LeftViewCellView.m in Sources */,
 				D71819C117DC52E700DE3F1A /* FootBarView.m in Sources */,
 				D740B07417EC3F2D0031CD97 /* RightViewCellView.m in Sources */,

@@ -10,9 +10,9 @@
 #import "RightViewCellView.h"
 #import "RightViewCellViewStytleTwo.h"
 
-static const int rowCount = 4;
+static const int rowCount = 5;
 
-@interface RightViewController ()<actionRightViewCellDelegate>
+@interface RightViewController ()
 
 @end
 
@@ -54,6 +54,7 @@ static const int rowCount = 4;
     {
     
     RightViewCellView *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
     if(cell == nil)
     {
         
@@ -64,29 +65,9 @@ static const int rowCount = 4;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-        UIImage * trues = [UIImage imageNamed:@"StatusTrueNormal.png"];
-        UIImage * falses = [UIImage imageNamed:@"StatusFalseNormal.png"];
-        
-        CGRect segmentRect;
-        {
-            segmentRect.origin.x = 140 ;
-            segmentRect.origin.y = 10 ;
-            segmentRect.size.width = trues.size.width + falses.size.width ;
-            segmentRect.size.height = trues.size.height;
-        }
-        
-        SVSegmentedControl *redSC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:trues, falses, nil]];
-        [redSC addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
-        
-        redSC.tag = 0;
-        redSC.crossFadeLabelsOnDrag = YES;
-        redSC.thumb.tintColor = [UIColor colorWithRed:0.6 green:0.2 blue:0.2 alpha:1];
-        redSC.selectedIndex = 1;
-        redSC.frame = segmentRect;
-        
-        [cell addSubview:redSC];
-
+   [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
     cell.TextLabel.text = @"Alarm";
+
 
     return cell;
         
@@ -103,28 +84,8 @@ static const int rowCount = 4;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
-        UIImage * trues = [UIImage imageNamed:@"StatusTrueNormal.png"];
-        UIImage * falses = [UIImage imageNamed:@"StatusFalseNormal.png"];
         
-        CGRect segmentRect;
-        {
-            segmentRect.origin.x = 140 ;
-            segmentRect.origin.y = 10 ;
-            segmentRect.size.width = trues.size.width + falses.size.width ;
-            segmentRect.size.height = trues.size.height;
-        }
-        
-        SVSegmentedControl *redSC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:trues, falses, nil]];
-        [redSC addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
-        
-        redSC.tag = 1;
-        redSC.crossFadeLabelsOnDrag = YES;
-        redSC.thumb.tintColor = [UIColor colorWithRed:0.6 green:0.2 blue:0.2 alpha:1];
-        redSC.selectedIndex = 1;
-        redSC.frame = segmentRect;
-        
-        [cell addSubview:redSC];
-
+       [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
         cell.TextLabel.text = @"Snooze";
         return cell;
   
@@ -143,27 +104,8 @@ static const int rowCount = 4;
         
         [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
         
-        UIImage * trues = [UIImage imageNamed:@"StatusTrueNormal.png"];
-        UIImage * falses = [UIImage imageNamed:@"StatusFalseNormal.png"];
         
-        CGRect segmentRect;
-        {
-            segmentRect.origin.x = 140 ;
-            segmentRect.origin.y = 10 ;
-            segmentRect.size.width = trues.size.width + falses.size.width ;
-            segmentRect.size.height = trues.size.height;
-        }
-        
-        SVSegmentedControl *redSC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:trues, falses, nil]];
-        [redSC addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
-        
-        redSC.tag = 2;
-        redSC.crossFadeLabelsOnDrag = YES;
-        redSC.thumb.tintColor = [UIColor colorWithRed:0.6 green:0.2 blue:0.2 alpha:1];
-        redSC.selectedIndex = 0;
-        redSC.frame = segmentRect;
-        
-        [cell addSubview:redSC];
+          cell.TextLabel.text = @"FaceBook";
 
         
         return cell;
@@ -181,14 +123,31 @@ static const int rowCount = 4;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
-        [cell.contentView setBackgroundColor:[UIColor colorWithRed:0.12 green:0.16 blue:0.21 alpha:1.0]];
         
-        [cell.cellButton setBackgroundImage:[UIImage imageNamed:@"CellAccessory.png"] forState:UIControlStateNormal];
 
         cell.cellLabel.text = @"Help & FAQ";
         
         return cell;
   
+    }else if (indexPath.row == 4)
+    {
+        RightViewCellViewStytleTwo *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if(cell == nil)
+        {
+            
+            NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"RightViewCellViewStytleTwo"
+                                                        owner:self
+                                                      options:nil];
+            cell = [_nib objectAtIndex:0];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        
+        
+        cell.cellLabel.text = @"Ring";
+        
+        return cell;
+        
     }
 
  
@@ -214,9 +173,9 @@ static const int rowCount = 4;
     CGRect tableViewRect;
     {
         tableViewRect.origin.x = 0;
-        tableViewRect.origin.y = 0;
+        tableViewRect.origin.y = 20;
         tableViewRect.size.width = 320;
-        tableViewRect.size.height = 480;
+        tableViewRect.size.height = 548;
     }    
     
     _tableView = [[UITableView alloc] initWithFrame:tableViewRect style:UITableViewStylePlain];
@@ -255,10 +214,7 @@ static const int rowCount = 4;
     [self initData];
 }
 
-- (void)segmentedControlChangedValue:(SVSegmentedControl*)segmentedControl
-{
-	NSLog(@"segmentedControl %i did select index %i (via UIControl method)", segmentedControl.tag, segmentedControl.selectedIndex);
-}
+
 
 - (void)didReceiveMemoryWarning
 {
