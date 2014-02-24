@@ -189,7 +189,7 @@
     CGRect footBarView;
     {
         footBarView.origin.x = 0;
-        footBarView.origin.y = 496;
+        footBarView.origin.y = 450;
         footBarView.size.width = 320;
         footBarView.size.height = 72;
     }
@@ -219,6 +219,7 @@
     NSArray *_nib=[[NSBundle mainBundle] loadNibNamed:@"FootBarView" owner:self options:nil];
     _footBar = [_nib objectAtIndex:0];
     _footBar.frame = footBarView;
+
     
     // 创建一个手势识别器
     UITapGestureRecognizer *oneFingerOneTaps =
@@ -236,6 +237,7 @@
     [self.view addSubview:_tableView];
     [self.view addSubview:_separatorLineTwo];
     [self.view addSubview:_footBar];
+
     
 }
 

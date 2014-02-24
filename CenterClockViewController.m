@@ -74,7 +74,7 @@
     _alrmDataController = [AlarmDataController sharedInstanceMethod];
     if([_alrmDataController.alarmList count] != 0)
     {
-        Alarm * alarm = [_alrmDataController.alarmList objectAtIndex:0];
+        Alarm * alarm =  [_alrmDataController getLastAlarm];//[_alrmDataController.alarmList objectAtIndex:0];
         tempDate = alarm.date;
     }else
     {

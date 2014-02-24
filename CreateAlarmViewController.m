@@ -119,6 +119,12 @@
 {
     _alarmDataController = [AlarmDataController sharedInstanceMethod];
    [_alarmDataController addAlarmWithInfo:_labelString Date:_date];
+    
+//    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    NSString* datestr=[dateFormatter stringFromDate:_date];
+//    NSLog(@"...%@",datestr);
+    
    [self presentViewController:[self getMMDrawerController] animated:YES completion:nil];
 }
 
@@ -162,7 +168,7 @@
     datePicker = [[UIDatePicker alloc] init];
     datePicker.frame = datePickerRect;
    [datePicker addTarget:self action:@selector(datePickerChanged) forControlEvents:UIControlEventValueChanged];
-    datePicker.datePickerMode = UIDatePickerModeDateAndTime;
+    datePicker.datePickerMode = UIDatePickerModeTime;
    [self.view addSubview:datePicker];
     
 }
@@ -186,7 +192,6 @@
     [deleteButton addTarget:self action:@selector(deleteAlarm) forControlEvents:UIControlEventTouchUpInside];
 
 }
-
 
 
 - (void)initTextInputView
@@ -221,7 +226,6 @@
     }
     _dwtaglist = [[DWTagList alloc] initWithFrame:tagListViewRect];
     
-    
     [_dwtaglist setAutomaticResize:YES];
     NSArray *array = [[NSArray alloc] initWithObjects:@"Foo", @"Tag Label 1", @"Tag Label 2", @"Tag Label 3", @"Tag Label 4", @"Long long long long long long Tag", nil];
     [_dwtaglist setTags:array];
@@ -229,7 +233,6 @@
     [self.view addSubview:_dwtaglist];
     
 }
-
 
 
 

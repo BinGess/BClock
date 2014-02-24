@@ -20,6 +20,7 @@
 
 - (void)addAlarmWithInfo:(NSString *)info Date:(NSDate *) date;
 - (void)deleteAlarmWith:(Alarm*)alarm;
+- (Alarm *)getLastAlarm;
 
 - (NSInteger) countOfAlarmList;
 

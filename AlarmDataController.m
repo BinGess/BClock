@@ -29,6 +29,7 @@ static AlarmDataController * sharedInstance = nil;
         [_alarmDataBase createDataBase];
         [self getALarmListFromDataBase];
 
+       // [self getLastAlarm];
      
     
         
@@ -124,11 +125,73 @@ static AlarmDataController * sharedInstance = nil;
     NSMutableArray * result = [_alarmDataBase queryAll];
     for(Alarm *alarm in result)
     {
+        NSLog(@"%@",alarm.info);
         [_alarmList addObject:alarm];
     }
 
 }
 
+- (NSTimeInterval)getTimeInterval:(NSDate *)theDate
+{
+    NSDateFormatter* dateFormatter =[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+
+    
+    NSDate * now = [NSDate date];
+    
+    NSLog(@"theDate%@",[dateFormatter stringFromDate:theDate]);
+    NSLog(@"now%@",[dateFormatter stringFromDate:now]);
+    NSTimeInterval time=[theDate timeIntervalSinceDate:now];
+
+    int days=((int)time)/(3600*24);
+    int hours=((int)time)%(3600*24)/3600;
+    NSString * dateContent=[[NSString alloc] initWithFormat:@"%i天%i小时",days,hours];
+    
+    NSLog(@"...%@",dateContent);
+    
+    return time;
+}
+
+
+- (Alarm *)getLastAlarm
+{
+    NSMutableArray * result = [_alarmDataBase queryAll];
+    
+    if(result.count != 0)
+    {
+        [self BubbleSort:result];
+        
+        NSDateFormatter* date=[[NSDateFormatter alloc] init];
+        [date setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        
+//        for(Alarm * alarm in result)
+//        {
+//            NSLog(@"%@",alarm.info);
+//            NSLog(@"%@",[date stringFromDate:alarm.date]);
+//        }
+        
+        Alarm * tempAlarm = [result objectAtIndex:0];
+        NSLog(@"%@",tempAlarm.info);
+        NSLog(@"%@",[date stringFromDate:tempAlarm.date]);
+        
+        return tempAlarm;
+    }
+    return  Nil;
+}
+
+-(void)BubbleSort:(NSMutableArray *)list{
+    
+    for (int j = 1; j<= [list count]; j++) {
+        for(int i = 0 ;i < j ; i++){
+            if(i == [list count]-1)return;
+            NSDate * a1 = ((Alarm*)[list objectAtIndex:i]).date ;
+            NSDate * a2 = ((Alarm*)[list objectAtIndex:i+1]).date;
+            if([self getTimeInterval:a1] < [self getTimeInterval:a2]){
+                [list exchangeObjectAtIndex:i withObjectAtIndex:i+1];
+            }
+        }
+    }
+}
 // cancel alarm and remove the localNotificaiton for a Alarm
 - (void) removeAlarm:(Alarm *) alarm
 {

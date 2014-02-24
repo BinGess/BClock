@@ -35,6 +35,8 @@
     
     navigationController.navigationBar.tintColor = [UIColor clearColor];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:65/255.0 green:159/255.0 blue:252/255.0 alpha:0.5]];
+    
     [navigationController setRestorationIdentifier:@"MMExampleCenterNavigationControllerRestorationKey"];
     
     
